@@ -1,40 +1,76 @@
 import React from 'react';
 
-const Card = ({ title, subtitle, description, icon }) => (
-  <div className="premium-card">
-    <div style={{ width: '4rem', height: '4rem', background: 'rgba(45, 48, 145, 0.05)', borderRadius: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', marginBottom: '2rem' }}>
+const FeatureBlock = ({ title, subtitle, description, icon, reversed }) => (
+  <div style={{ 
+    display: 'grid', 
+    gridTemplateColumns: '1fr 1fr', 
+    gap: '6rem', 
+    alignItems: 'center', 
+    marginBottom: '8rem',
+    direction: reversed ? 'rtl' : 'ltr'
+  }}>
+    <div style={{ direction: 'ltr' }}>
+      <span className="section-eyebrow">{subtitle}</span>
+      <h3 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>{title}</h3>
+      <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>{description}</p>
+      <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2.5rem' }}>
+        <li style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontWeight: 600 }}>
+          <span style={{ color: 'var(--accent-magenta)' }}>✓</span> Full lifecycle management
+        </li>
+        <li style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontWeight: 600 }}>
+          <span style={{ color: 'var(--accent-magenta)' }}>✓</span> AI-driven predictive insights
+        </li>
+        <li style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontWeight: 600 }}>
+          <span style={{ color: 'var(--accent-magenta)' }}>✓</span> 100% Secure data encryption
+        </li>
+      </ul>
+      <button className="btn-primary" style={{ padding: '0.9rem 2rem' }}>Explore {title} →</button>
+    </div>
+    <div style={{ 
+      background: 'var(--bg-corporate)', 
+      height: '400px', 
+      borderRadius: '1.5rem', 
+      border: '1px solid var(--border)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '4rem'
+    }}>
       {icon}
     </div>
-    <div style={{ color: 'var(--accent-purple)', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '0.75rem' }}>{subtitle}</div>
-    <h3 style={{ fontSize: '1.75rem', marginBottom: '1.25rem' }}>{title}</h3>
-    <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', marginBottom: '2rem' }}>{description}</p>
-    <a href="#" style={{ color: 'var(--primary)', fontWeight: 700, textDecoration: 'none', fontSize: '1rem' }}>Explore Solution →</a>
   </div>
 );
 
 const Features = () => {
-  const features = [
-    { title: 'Global ERP', subtitle: 'Resource Planning', description: 'Real-time inventory, finance, and supply chain management for international scale.', icon: '🌐' },
-    { title: 'Dynamic CRM', subtitle: 'Customer Sync', description: 'Nurture relationships with AI-driven pipelines and deep-behavioral analytics.', icon: '🤝' },
-    { title: 'Financial Core', subtitle: 'Global Compliance', description: 'Unified accounting and multi-currency billing with enterprise security.', icon: '🛡️' },
-    { title: 'Asset Insight', subtitle: 'IT Management', description: 'Monitor and optimize your infrastructure with predictive maintenance.', icon: '💻' },
-    { title: 'Cyber Shield', subtitle: 'Automation', description: 'Protect your operations with integrated proactive security and threat intelligence.', icon: '🔒' },
-    { title: 'Intelli-Workflow', subtitle: 'Connectivity', description: 'Automate complex cross-functional processes with our low-code engine.', icon: '⚙️' },
-  ];
-
   return (
-    <section id="features" className="bg-light">
+    <section id="features">
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
-          <span className="section-label">Enterprise Modules</span>
-          <h2 style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>Sophisticated Solutions for <br /><span className="gradient-text">Unrivaled Growth.</span></h2>
-          <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-muted)', fontSize: '1.2rem' }}>
-            Empowering your organization with the technological precision required to lead in the digital era.
-          </p>
+        <div style={{ textAlign: 'center', marginBottom: '8rem' }}>
+          <span className="section-eyebrow">The Enterprise Suite</span>
+          <h2 style={{ fontSize: '3.5rem' }}>Comprehensive solutions for <br /><span className="gradient-text">every business need.</span></h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem' }}>
-          {features.map((f, i) => <Card key={i} {...f} />)}
-        </div>
+        
+        <FeatureBlock 
+          title="Global ERP Core" 
+          subtitle="Resource Planning" 
+          description="Unify your finance, inventory, and supply chain into one high-performance hub. Designed for complex international operations."
+          icon="📦"
+        />
+        
+        <FeatureBlock 
+          title="Intelligent CRM" 
+          subtitle="Customer Success" 
+          description="Turn leads into loyalty with AI-powered behavioral tracking and automated sales pipelines that never miss a beat."
+          icon="🎯"
+          reversed
+        />
+        
+        <FeatureBlock 
+          title="Security & Analytics" 
+          subtitle="Data Integrity" 
+          description="Monitor your entire IT ecosystem with real-time threat detection and gain actionable insights with executive dashboards."
+          icon="🛡️"
+        />
       </div>
     </section>
   );
