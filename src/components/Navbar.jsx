@@ -10,24 +10,29 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`glass-header ${scrolled ? 'scrolled' : ''}`} style={{ transition: 'var(--transition)', padding: scrolled ? '0.75rem 0' : '1.25rem 0' }}>
+    <nav className="glass-nav" style={{ 
+      position: 'fixed',
+      top: 0,
+      width: '100%',
+      zIndex: 1000,
+      transition: 'var(--transition)',
+      padding: scrolled ? '1rem 0' : '2rem 0',
+      background: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+      boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.05)' : 'none',
+      backdropFilter: 'blur(10px)'
+    }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <img src="/src/assets/logo.png" alt="NetJetGo Logo" style={{ height: '40px', width: 'auto' }} />
+        <div className="logo">
+          <img src="/src/assets/logo.png" alt="NetJetGo Logo" style={{ height: scrolled ? '45px' : '55px', transition: 'var(--transition)' }} className="logo-vignette" />
         </div>
         
-        <div className="nav-links" style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
-          <div className="dropdown" style={{ position: 'relative', cursor: 'pointer', fontWeight: 500 }}>
-            Solutions <span style={{ fontSize: '0.8rem' }}>▼</span>
+        <div style={{ display: 'flex', gap: '3rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '2.5rem' }}>
+            <a href="#features" style={{ color: 'var(--nav-navy)', textDecoration: 'none', fontWeight: 600, fontSize: '1rem' }}>Solutions</a>
+            <a href="#about" style={{ color: 'var(--nav-navy)', textDecoration: 'none', fontWeight: 600, fontSize: '1rem' }}>Innovation</a>
+            <a href="#process" style={{ color: 'var(--nav-navy)', textDecoration: 'none', fontWeight: 600, fontSize: '1rem' }}>Success Model</a>
           </div>
-          <a href="#features" style={{ color: 'var(--text-dark)', textDecoration: 'none', fontWeight: 500 }}>Features</a>
-          <a href="#about" style={{ color: 'var(--text-dark)', textDecoration: 'none', fontWeight: 500 }}>About</a>
-          <a href="#process" style={{ color: 'var(--text-dark)', textDecoration: 'none', fontWeight: 500 }}>How it Works</a>
-        </div>
-
-        <div className="nav-actions" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <a href="#" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>Login</a>
-          <button className="btn-primary" style={{ padding: '0.6rem 1.5rem' }}>Join Waitlist</button>
+          <button className="btn-premium" style={{ padding: '0.8rem 2rem', fontSize: '0.95rem' }}>Join the Future</button>
         </div>
       </div>
     </nav>

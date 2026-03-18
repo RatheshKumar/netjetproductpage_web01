@@ -2,49 +2,50 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer style={{ background: 'var(--navy)', color: 'var(--white)', padding: '5rem 0 3rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+    <footer style={{ background: 'var(--nav-navy)', color: 'var(--white)', padding: '10rem 0 4rem' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '4rem', marginBottom: '4rem' }}>
-          <div className="footer-brand">
-            <img src="/src/assets/logo.png" alt="NetJetGo Color Logo" style={{ height: '40px', marginBottom: '1.5rem', filter: 'brightness(0) invert(1)' }} />
-            <p style={{ color: '#94A3B8', fontSize: '0.9rem', maxWidth: '300px' }}>
-              The future of business management. Beyond & More. Empowering enterprises with unified ERP & CRM solutions.
+        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', gap: '6rem', marginBottom: '8rem' }}>
+          <div>
+            <img src="/src/assets/logo.png" alt="NetJetGo Logo" style={{ height: '50px', marginBottom: '2.5rem', filter: 'brightness(0) invert(1)' }} />
+            <p style={{ opacity: 0.6, fontSize: '1.1rem', maxWidth: '350px', lineHeight: 1.8 }}>
+              Accelerating the digital transformation of global enterprises through the synergy of IT excellence and creative design.
             </p>
           </div>
           <div>
-            <h4 style={{ marginBottom: '1.5rem' }}>Platform</h4>
-            <ul style={{ listStyle: 'none', color: '#94A3B8', fontSize: '0.9rem' }}>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Solutions</a></li>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>ERP Modules</a></li>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>CRM Features</a></li>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Integrations</a></li>
+            <h4 style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>Core Modules</h4>
+            <ul style={{ listStyle: 'none', opacity: 0.7, fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Enterprise ERP</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Deep CRM</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Security Core</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Automation AI</a></li>
             </ul>
           </div>
           <div>
-            <h4 style={{ marginBottom: '1.5rem' }}>Company</h4>
-            <ul style={{ listStyle: 'none', color: '#94A3B8', fontSize: '0.9rem' }}>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>About Us</a></li>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Careers</a></li>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Press</a></li>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a></li>
+            <h4 style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>Network</h4>
+            <ul style={{ listStyle: 'none', opacity: 0.7, fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Middle East Hub</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Western Connect</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Asian Operations</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Success Stories</a></li>
             </ul>
           </div>
           <div>
-            <h4 style={{ marginBottom: '1.5rem' }}>Legal</h4>
-            <ul style={{ listStyle: 'none', color: '#94A3B8', fontSize: '0.9rem' }}>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy Policy</a></li>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Terms of Service</a></li>
-              <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Cookie Policy</a></li>
+            <h4 style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>Connect</h4>
+            <ul style={{ listStyle: 'none', opacity: 0.7, fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Talk to Sales</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>HQ Office</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Global Support</a></li>
+              <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Partnership</a></li>
             </ul>
           </div>
         </div>
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '2.5rem', borderTop: '1px solid rgba(255,255,255,0.05)', color: '#64748B', fontSize: '0.8rem' }}>
-          <div>© 2026 NetJetGo Inc. All rights reserved.</div>
-          <div style={{ display: 'flex', gap: '2rem' }}>
-            <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a>
-            <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Twitter</a>
-            <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>GitHub</a>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.05)', opacity: 0.5, fontSize: '0.95rem' }}>
+          <div>© 2026 NetJetGo International. Part of the Netjet Network.</div>
+          <div style={{ display: 'flex', gap: '3rem' }}>
+            <span>Privacy</span>
+            <span>Terms</span>
+            <span>Security</span>
           </div>
         </div>
       </div>

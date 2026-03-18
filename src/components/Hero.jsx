@@ -2,39 +2,42 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="hero" style={{ padding: '12rem 0 8rem', background: 'var(--white)' }}>
-      <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-        <div className="hero-content">
-          <span className="section-tag">Empowering Enterprise</span>
-          <h1 style={{ fontSize: '4.5rem', marginBottom: '1.5rem', color: 'var(--navy)' }}>
-            Next-Gen <span className="gradient-text">ERP & CRM</span> <br /> 
-            Beyond & More.
+    <section style={{ 
+      padding: '16rem 0 10rem', 
+      background: 'radial-gradient(circle at top right, rgba(45, 48, 145, 0.05), transparent), radial-gradient(circle at bottom left, rgba(194, 24, 91, 0.05), transparent)' 
+    }}>
+      <div className="container">
+        <div style={{ textAlign: 'center', maxWidth: '1000px', margin: '0 auto' }}>
+          <span className="section-label">Your Goal, Our Code.</span>
+          <h1 style={{ fontSize: '5.5rem', lineHeight: 1, marginBottom: '2.5rem', fontWeight: 900 }}>
+            Unified <span className="gradient-text">ERP & CRM</span> <br /> 
+            for the Modern Enterprise.
           </h1>
-          <p style={{ fontSize: '1.25rem', color: 'var(--text-medium)', marginBottom: '2.5rem', maxWidth: '600px' }}>
-            Transform your business with NetJetGo. Seamlessly integrate your sales, operations, and finance into one powerful, intuitive platform.
+          <p style={{ fontSize: '1.5rem', color: 'var(--text-muted)', marginBottom: '3.5rem', maxWidth: '800px', margin: '0 auto 3.5rem' }}>
+            Elevate your operational efficiency with NetJetGo—the elite software ecosystem designed to simplify complexity and drive global growth.
           </p>
-          <div style={{ display: 'flex', gap: '1.25rem' }}>
-            <button className="btn-primary" style={{ fontSize: '1.1rem' }}>Pre-Register Now</button>
-            <button className="btn-secondary" style={{ fontSize: '1.1rem' }}>View Solutions</button>
-          </div>
-          <div style={{ marginTop: '3rem', display: 'flex', gap: '2rem', color: 'var(--text-medium)', fontSize: '0.9rem' }}>
-            <span>✓ Cloud Native</span>
-            <span>✓ AI-Driven Insights</span>
-            <span>✓ Enterprise Secure</span>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
+            <button className="btn-premium">Get Exclusive Access</button>
+            <button className="btn-outline">Explore the Model</button>
           </div>
         </div>
-        <div className="hero-asset" style={{ display: 'flex', justifyContent: 'center' }}>
-          <div style={{ 
-            background: 'var(--primary)', 
-            padding: '2rem', 
-            borderRadius: '2rem', 
-            boxShadow: '20px 20px 60px #bebebe, -20px -20px 60px #ffffff',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <img src="/src/assets/logo-square.png" alt="NetJetGo Branding" style={{ maxWidth: '100%', height: 'auto', borderRadius: '1rem' }} />
-          </div>
+
+        <div style={{ 
+          marginTop: '6rem', 
+          display: 'flex', 
+          justifyContent: 'center', 
+          padding: '4rem',
+          background: 'rgba(255,255,255,0.8)',
+          borderRadius: '3rem',
+          border: '1px solid var(--border)',
+          boxShadow: '0 40px 100px -20px rgba(0,0,0,0.1)'
+        }}>
+          <img 
+            src="/src/assets/logo-square.png" 
+            alt="NetJetGo Identity" 
+            style={{ width: '250px', height: '250px', objectFit: 'contain' }} 
+            className="logo-vignette"
+          />
         </div>
       </div>
     </section>

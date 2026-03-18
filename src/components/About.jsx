@@ -3,45 +3,35 @@ import React from 'react';
 const About = () => {
   return (
     <section id="about">
-      <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
-        <div className="about-image">
-          <div style={{ 
-            background: 'linear-gradient(135deg, var(--navy), var(--primary))', 
-            height: '500px', 
-            borderRadius: '2rem',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
+      <div className="container">
+        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '8rem', alignItems: 'center' }}>
+          <div className="about-content">
+            <span className="section-label">Beyond & More</span>
+            <h2 style={{ fontSize: '3.5rem', marginBottom: '2rem' }}>A Legacy of <br /><span className="gradient-text">IT & Design Innovation.</span></h2>
+            <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', marginBottom: '3rem' }}>
+              Part of the Netjet International network, NetJetGo is the pinnacle of IT excellence. We don't just provide software; we provide the creative and technological synergy that turns visions into global reality.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
+              <div>
+                <h4 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--primary)' }}>Creative Synergy</h4>
+                <p>Award-winning UI/UX deeply integrated with enterprise-grade logic.</p>
+              </div>
+              <div>
+                <h4 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--primary)' }}>Global Network</h4>
+                <p>Support centers across Middle East, Asia, and the West.</p>
+              </div>
+            </div>
+          </div>
+          <div className="about-branding">
             <div style={{ 
-              position: 'absolute', 
-              top: '50%', 
-              left: '50%', 
-              transform: 'translate(-50%, -50%)',
-              color: 'white',
-              textAlign: 'center'
+              background: 'var(--navy-gradient)', 
+              padding: '5rem', 
+              borderRadius: '4rem',
+              boxShadow: '0 50px 100px -20px rgba(45, 48, 145, 0.3)'
             }}>
-              <h4 style={{ fontSize: '2rem' }}>Beyond & More</h4>
-              <p style={{ opacity: 0.8 }}>The NetJetGo Philosophy</p>
+              <img src="/src/assets/logo-square.png" alt="Netjet Branding" style={{ width: '100%', filter: 'brightness(1.5)' }} />
             </div>
           </div>
-        </div>
-        <div className="about-content">
-          <span className="section-tag">Our Vision</span>
-          <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>Building the backbone of <span className="gradient-text">modern industry.</span></h2>
-          <p style={{ fontSize: '1.125rem', color: 'var(--text-medium)', marginBottom: '2rem' }}>
-            NetJetGo was founded with a single mission: to provide businesses of all sizes with the high-performance tools they need to scale without limits. We believe that technology should be an accelerator, not a barrier.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-            <div>
-              <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Our Mission</h4>
-              <p style={{ fontSize: '0.9rem' }}>To simplify complexity through elegant engineering and intuitive design.</p>
-            </div>
-            <div>
-              <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Global Reach</h4>
-              <p style={{ fontSize: '0.9rem' }}>Supporting enterprises across 40+ countries with local expertise.</p>
-            </div>
-          </div>
-          <button className="btn-secondary" style={{ marginTop: '2.5rem' }}>Learn More About Us</button>
         </div>
       </div>
     </section>
