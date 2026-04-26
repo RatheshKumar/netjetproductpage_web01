@@ -1,55 +1,73 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Process from './components/Process';
-import About from './components/About';
-import Footer from './components/Footer';
-import './index.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
-function App() {
+// Components
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import AnnouncementBanner from './components/AnnouncementBanner.jsx';
+
+// Pages
+import HomePage from './pages/HomePage.jsx';
+import FeaturesPage from './pages/FeaturesPage.jsx';
+import PricingPage from './pages/PricingPage.jsx';
+import RoadmapPage from './pages/RoadmapPage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
+import WaitlistPage from './pages/WaitlistPage.jsx';
+
+// Scroll to top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+const App = () => {
+  const [spotsRemaining, setSpotsRemaining] = useState(47);
+
+  const decrementSpots = () => {
+    setSpotsRemaining(prev => Math.max(0, prev - 1));
+  };
+
   return (
-    <div className="App">
-      <Navbar />
-      <main>
-        <Hero />
+    <Router>
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen bg-dark-base text-text-primary">
+        <AnnouncementBanner />
+        <Navbar />
         
-        {/* Trust Banner */}
-        <div style={{ background: '#F8FAFC', padding: '3rem 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-          <div className="container" style={{ display: 'flex', justifyContent: 'space-between', opacity: 0.4, filter: 'grayscale(1)' }}>
-            <span style={{ fontWeight: 800 }}>MITSUBISHI</span>
-            <span style={{ fontWeight: 800 }}>SIEMENS</span>
-            <span style={{ fontWeight: 800 }}>ERICSSON</span>
-            <span style={{ fontWeight: 800 }}>NESTLE</span>
-            <span style={{ fontWeight: 800 }}>SAMSUNG</span>
-          </div>
-        </div>
-
-        <Features />
-        <Process />
-        <About />
+        <main className="flex-grow">
+          <Routes>
+            <Route 
+              path="/" 
+              element={
+                <HomePage 
+                  spotsRemaining={spotsRemaining} 
+                  decrementSpots={decrementSpots} 
+                />
+              } 
+            />
+            <Route path="/features" element={<FeaturesPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/roadmap" element={<RoadmapPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route 
+              path="/waitlist" 
+              element={
+                <WaitlistPage 
+                  spotsRemaining={spotsRemaining} 
+                  decrementSpots={decrementSpots} 
+                />
+              } 
+            />
+          </Routes>
+        </main>
         
-        {/* Final CTA */}
-        <section style={{ textAlign: 'center', padding: '12rem 0', background: 'white' }}>
-          <div className="container">
-            <span className="section-eyebrow">Ready to begin?</span>
-            <h2 style={{ fontSize: '4.5rem', marginBottom: '2.5rem', lineHeight: 1.1 }}>
-              Secure your <span className="gradient-text">Elite Access</span> <br /> 
-              to NetJetGo today.
-            </h2>
-            <p style={{ fontSize: '1.4rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto 4rem' }}>
-              Join the international network of enterprises that have simplified their complexity.
-            </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
-              <button className="btn-accent" style={{ padding: '1.25rem 3.5rem' }}>Join the Waitlist</button>
-              <button className="btn-primary" style={{ padding: '1.25rem 3.5rem', background: 'transparent', color: 'var(--primary-navy)', border: '1px solid var(--border)' }}>Speak with an Expert</button>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
