@@ -199,6 +199,7 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
                         <option value="11-50">11–50 employees</option>
                         <option value="51-200">51–200 employees</option>
                       </select>
+                      {errors.teamSize && <p className="text-accent-pink text-[11px] font-bold ml-1">{errors.teamSize}</p>}
                     </div>
                   </div>
 
