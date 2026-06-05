@@ -18,11 +18,11 @@ import {
 } from 'lucide-react';
 import WaitlistForm from '../components/WaitlistForm.jsx';
 import SpotCounter from '../components/SpotCounter.jsx';
-import useCountdown from '../hooks/useCountdown.js';
+import ScrollFeatureShowcase from '../components/ScrollFeatureShowcase.jsx';
 import useScrollAnimation from '../hooks/useScrollAnimation.js';
 
 const HomePage = ({ spotsRemaining, decrementSpots }) => {
-  const timeLeft = useCountdown('2026-09-01T00:00:00');
+
   const scrollRef = useScrollAnimation();
 
   return (
@@ -192,51 +192,8 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
         </div>
       </section>
 
-      {/* SECTION 3: COUNTDOWN (DARK INDIGO) */}
-      <section className="section-dark-indigo py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-        
-        <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10 fade-in-up">
-          <h2 className="text-white mb-4">Official Launch Countdown</h2>
-          <p className="text-white/55 font-bold tracking-[0.2em] uppercase text-[12px] mb-16">beyond & more</p>
-          
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-10 mb-16">
-            {[
-              { val: timeLeft.days, label: "Days" },
-              { val: timeLeft.hours, label: "Hours" },
-              { val: timeLeft.minutes, label: "Minutes" },
-              { val: timeLeft.seconds, label: "Seconds" }
-            ].map((unit, i) => (
-              <React.Fragment key={i}>
-                <div className="bg-white/10 border border-white/15 p-6 md:p-10 min-w-[140px] md:min-w-[180px] rounded-[14px] backdrop-blur-xl">
-                  <span className="block text-[56px] md:text-[64px] font-extrabold text-white font-mono mb-2 leading-none">
-                    {unit.val}
-                  </span>
-                  <span className="text-[11px] text-white/50 font-bold uppercase tracking-[0.12em]">
-                    {unit.label}
-                  </span>
-                </div>
-                {i < 3 && (
-                  <span className="hidden md:block text-[40px] text-accent-pink font-extrabold pb-8">:</span>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-          
-          <div className="space-y-10">
-            <p className="text-white/75 text-lg font-medium">
-              Early bird members get <span className="text-white font-bold underline underline-offset-4 decoration-accent-pink">40% lifetime discount</span>. 
-            </p>
-            <Link 
-              to="/waitlist" 
-              className="btn-primary py-5 px-14 text-lg inline-flex items-center space-x-3"
-            >
-              <span>Join the Launch Cohort</span>
-              <ArrowRight size={22} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* SECTION 3: SCROLL-DRIVEN FEATURE SHOWCASE */}
+      <ScrollFeatureShowcase />
 
       {/* SECTION 4: PROBLEM (LIGHT) */}
       <section className="section-white py-24 border-b border-border-light">
