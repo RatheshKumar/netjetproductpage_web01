@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Rocket } from 'lucide-react';
+import navbarLogo from '../assets/navbarlogo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,17 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -34,14 +46,8 @@ const Navbar = () => {
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <Rocket className="text-brand-indigo group-hover:rotate-12 transition-transform" size={24} />
-            <span className="text-2xl font-extrabold font-display text-brand-indigo tracking-tight">
-              NetJetGo
-            </span>
-            <span className="ml-2 bg-brand-indigo/10 text-brand-indigo text-[11px] font-bold px-2 py-0.5 rounded border border-border-medium">
-              BETA
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img src={navbarLogo} alt="NetJetGo Logo" className="h-10 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}

@@ -7,9 +7,9 @@ const AboutPage = () => {
   const scrollRef = useScrollAnimation();
 
   return (
-    <div className="pt-20" ref={scrollRef}>
+    <div ref={scrollRef}>
       {/* SECTION 1: HERO (INDIGO) */}
-      <section className="section-indigo pt-24 pb-32 text-center overflow-hidden">
+      <section className="section-indigo pt-32 lg:pt-40 pb-32 text-center overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-6 fade-in-up">
           <h1 className="text-white mb-6">Built for the Backbone of India</h1>
           <p className="text-white/75 text-xl max-w-3xl mx-auto leading-relaxed">
@@ -21,7 +21,7 @@ const AboutPage = () => {
       {/* SECTION 2: MISSION (WHITE) */}
       <section className="section-white py-24 border-b border-border-light">
         <div className="max-w-[900px] mx-auto px-6 fade-in-up">
-          <div className="bg-page-bg/50 border border-border-light p-10 md:p-16 rounded-[24px] relative">
+          <div className="bg-page-bg/50 border border-border-light p-6 sm:p-10 md:p-16 rounded-[24px] relative">
             <span className="text-brand-indigo text-6xl font-extrabold absolute top-8 left-8 opacity-10 font-display leading-none">“</span>
             <div className="relative z-10 text-center">
               <h2 className="text-2xl md:text-3xl font-extrabold text-text-primary font-display mb-10 leading-tight">

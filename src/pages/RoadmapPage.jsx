@@ -62,9 +62,9 @@ const RoadmapPage = () => {
   ];
 
   return (
-    <div className="pt-20" ref={scrollRef}>
+    <div ref={scrollRef}>
       {/* SECTION 1: HERO (INDIGO) */}
-      <section className="section-indigo pt-24 pb-32 text-center">
+      <section className="section-indigo pt-32 lg:pt-40 pb-32 text-center">
         <div className="max-w-[1200px] mx-auto px-6 fade-in-up">
           <div className="inline-flex items-center space-x-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-10">
             <Code size={14} className="text-accent-pink" />
@@ -85,7 +85,7 @@ const RoadmapPage = () => {
             {phases.map((phase, i) => (
               <div key={phase.id} className={`relative flex flex-col md:flex-row items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''} fade-in-up`}>
                 {/* Dot */}
-                <div className={`absolute left-0 md:left-1/2 w-4 h-4 rounded-full -translate-x-1/2 z-10 border-4 border-white ${
+                <div className={`absolute left-6 md:left-1/2 w-4 h-4 rounded-full -translate-x-1/2 z-10 border-4 border-white ${
                   phase.status === 'complete' ? 'bg-gradient-to-br from-brand-indigo to-accent-pink shadow-[0_0_0_4px_rgba(61,59,175,0.15)]' : 
                   phase.status === 'in-progress' ? 'bg-accent-orange pulse-ring' : 'bg-white border-2 border-border-medium border-dashed'
                 }`} />

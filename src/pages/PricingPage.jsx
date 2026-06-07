@@ -84,9 +84,9 @@ const PricingPage = () => {
   ];
 
   return (
-    <div className="pt-20" ref={scrollRef}>
+    <div ref={scrollRef}>
       {/* SECTION 1: HERO (INDIGO) */}
-      <section className="section-indigo pt-24 pb-32 overflow-hidden text-center">
+      <section className="section-indigo pt-32 lg:pt-40 pb-32 overflow-hidden text-center">
         <div className="max-w-[1200px] mx-auto px-6 fade-in-up">
           <h1 className="text-white mb-6">Simple, Transparent Pricing</h1>
           <p className="text-white/75 text-xl max-w-2xl mx-auto mb-12">

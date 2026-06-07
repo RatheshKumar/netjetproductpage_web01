@@ -82,6 +82,8 @@ const FEATURES = [
 
 const ScrollFeatureShowcase = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  
   // 'above' = section hasn't reached viewport yet, image flows normally at top
   // 'fixed' = section in view, image is position:fixed in viewport center
   // 'below' = section scrolled past, image anchored at bottom
@@ -94,7 +96,17 @@ const ScrollFeatureShowcase = () => {
   const rightColRef = useRef(null);
   const containerRef = useRef(null);
 
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const handleScroll = useCallback(() => {
+    if (window.innerWidth < 1024) return;
     const rightCol = rightColRef.current;
     const container = containerRef.current;
     if (!rightCol) return;
@@ -145,6 +157,8 @@ const ScrollFeatureShowcase = () => {
 
   // Build dynamic style for the image container
   const getImageStyle = () => {
+    if (isMobile) return {};
+    
     if (imageMode === 'fixed') {
       return {
         position: 'fixed',
@@ -195,7 +209,7 @@ const ScrollFeatureShowcase = () => {
 
             <div className="sc-feature-list">
               {FEATURES.map((feat, idx) => {
-                const isActive = activeIndex === idx;
+                const isActive = isMobile ? true : activeIndex === idx;
                 const Icon = feat.icon;
                 return (
                   <div
@@ -235,9 +249,11 @@ const ScrollFeatureShowcase = () => {
                             </ul>
                           )}
                         </div>
-                        {/* Mobile-only image */}
+                        {/* Mobile-only graphic image */}
                         <div className={`sc-mob-img${isActive ? ' sc-mob-img--on' : ''}`}>
-                          <img src={feat.image} alt={feat.title} />
+                          <div className="relative w-full aspect-[3552/1844] rounded-xl border border-white/10 p-1 bg-[#0d0c22] shadow-[0_15px_30px_rgba(0,0,0,0.5)]">
+                            <img src={feat.image} alt={feat.title} className="rounded-lg w-full h-full object-cover" />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -250,53 +266,61 @@ const ScrollFeatureShowcase = () => {
           {/* RIGHT — JS-controlled fixed/absolute image panel */}
           <div className="sc-right" ref={rightColRef}>
             <div className="sc-image-container" style={getImageStyle()} ref={containerRef}>
-              {/* Glow */}
+              
+              {/* Vibrant Ambient Glow behind */}
               <div
-                className="sc-glow"
+                className="sc-glow transition-all duration-700"
                 style={{
                   background: `radial-gradient(ellipse at 50% 50%, ${active.accent}25 0%, transparent 65%)`,
                 }}
               />
 
-              {/* Large image frame */}
-              <div className="sc-frame">
-                <div className="sc-frame-fade" />
-                {FEATURES.map((feat, idx) => (
-                  <img
-                    key={feat.id}
-                    src={feat.image}
-                    alt={feat.title}
-                    className={`sc-img${activeIndex === idx ? ' sc-img--on' : ''}`}
-                  />
-                ))}
+              {/* Graphic Designed Presentation Frame */}
+              <div className="relative w-full aspect-[4/3] flex items-center justify-center p-8 bg-white/[0.02] backdrop-blur-xl border border-white/5 rounded-3xl shadow-[0_24px_80px_rgba(0,0,0,0.4)] overflow-hidden [perspective:1200px]">
+                {/* Decorative Grid Overlay */}
+                <div className="absolute inset-0 bg-grid-white/[0.015] pointer-events-none" />
+                
+                {/* Dynamic colored background flare */}
+                <div className="absolute -left-10 -bottom-10 w-44 h-44 rounded-full blur-[90px] transition-all duration-1000" style={{ backgroundColor: active.accent, opacity: 0.15 }} />
+
+                {/* 3D Isometric Screen Display */}
+                <div className="relative w-full aspect-[3552/1844] rounded-xl border border-white/10 p-1.5 bg-[#0d0c22] shadow-[0_30px_60px_rgba(0,0,0,0.6)] transform [transform:rotateX(8deg)_rotateY(-16deg)_rotateZ(3deg)] transition-all duration-500 hover:[transform:rotateX(4deg)_rotateY(-8deg)_rotateZ(1.5deg)]">
+                  {/* Browser top controls bar */}
+                  <div className="h-6 border-b border-white/5 flex items-center px-3 space-x-1.5 bg-slate-950/40 rounded-t-lg">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500/80" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-yellow-500/80" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500/80" />
+                  </div>
+                  
+                  {/* Screenshot Stack */}
+                  <div className="relative w-full h-[calc(100%-24px)] overflow-hidden bg-slate-950 rounded-b-lg">
+                    {FEATURES.map((feat, idx) => (
+                      <img
+                        key={feat.id}
+                        src={feat.image}
+                        alt={feat.title}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                          activeIndex === idx ? 'opacity-100' : 'opacity-0'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Floating Graphic Badge 1 (Top Left) */}
+                <div className="absolute left-6 top-8 bg-slate-900/90 border border-white/15 rounded-xl px-4 py-2 shadow-2xl flex items-center space-x-2.5 transform -translate-x-2 -translate-y-2 pointer-events-none">
+                  <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: active.accent }} />
+                  <span className="text-[9px] font-bold text-white uppercase tracking-wider font-mono">NetJetGo OS</span>
+                </div>
+
+                {/* Floating Graphic Badge 2 (Bottom Right) */}
+                <div className="absolute right-6 bottom-8 bg-slate-900/90 border border-white/15 rounded-xl px-4 py-2 shadow-2xl flex items-center space-x-2.5 transform translate-x-2 translate-y-2 pointer-events-none">
+                  <span className="text-[9px] font-bold text-white uppercase tracking-wider font-mono">Sync: Active</span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                </div>
+
               </div>
 
-              {/* Label + dots */}
-              <div className="sc-meta">
-                <div className="sc-label">
-                  <span
-                    className="sc-label-dot"
-                    style={{ background: active.accent, boxShadow: `0 0 10px ${active.accent}` }}
-                  />
-                  <span className="sc-label-text">{active.title}</span>
-                </div>
-                <div className="sc-dots">
-                  {FEATURES.map((feat, idx) => (
-                    <button
-                      key={feat.id}
-                      className={`sc-dot${activeIndex === idx ? ' sc-dot--on' : ''}`}
-                      style={activeIndex === idx ? {
-                        background: feat.accent,
-                        boxShadow: `0 0 8px ${feat.accent}`,
-                      } : {}}
-                      aria-label={feat.title}
-                      onClick={() =>
-                        featureRefs.current[idx]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                      }
-                    />
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
 

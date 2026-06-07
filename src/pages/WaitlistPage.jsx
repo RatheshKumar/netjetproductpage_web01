@@ -86,7 +86,7 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
           <h2 className="text-4xl font-extrabold text-text-primary font-display mb-4">Welcome to the Founding Cohort!</h2>
           <p className="text-text-muted text-lg mb-12">Member #0049 — watch your inbox for the official launch link.</p>
           
-          <div className="bg-white border border-border-light p-10 rounded-[24px] shadow-sm mb-12">
+          <div className="bg-white border border-border-light p-6 md:p-10 rounded-[24px] shadow-sm mb-12">
             <p className="text-text-subtle font-bold uppercase tracking-widest text-[11px] mb-4">Assigned Member Number</p>
             <p className="text-6xl font-extrabold font-mono text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo to-accent-pink tracking-tighter">#0049</p>
           </div>
@@ -110,9 +110,9 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
   }
 
   return (
-    <div className="pt-20" ref={scrollRef}>
+    <div ref={scrollRef}>
       {/* SECTION 1: HERO (INDIGO) */}
-      <section className="section-indigo pt-24 pb-32 text-center">
+      <section className="section-indigo pt-32 lg:pt-40 pb-32 text-center">
         <div className="max-w-[1200px] mx-auto px-6 fade-in-up">
           <h1 className="text-white mb-6">Claim your Founding Spot</h1>
           <p className="text-white/75 text-xl max-w-2xl mx-auto mb-12">Join 1,247+ businesses locking in the unified OS and a lifetime 40% discount.</p>
@@ -171,7 +171,7 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
 
             {/* Right: Signup Form */}
             <div className="fade-in-up" style={{ animationDelay: '0.1s' }}>
-              <div className="bg-white border border-border-light p-8 md:p-12 rounded-[24px] shadow-sm">
+              <div className="bg-white border border-border-light p-6 md:p-12 rounded-[24px] shadow-sm">
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">

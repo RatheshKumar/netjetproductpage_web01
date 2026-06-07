@@ -91,9 +91,9 @@ const FeaturesPage = () => {
   ];
 
   return (
-    <div className="pt-20" ref={scrollRef}>
+    <div ref={scrollRef}>
       {/* PAGE TITLE / HERO SECTION */}
-      <section className="section-indigo pt-24 pb-32 overflow-hidden">
+      <section className="section-indigo pt-32 lg:pt-40 pb-32 overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-6 text-center fade-in-up">
           <div className="inline-flex items-center space-x-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-10">
             <span className="text-white text-[11px] font-bold uppercase tracking-widest">

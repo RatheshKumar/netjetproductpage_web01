@@ -33,7 +33,7 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-dark-base text-text-primary">
+      <div className="flex flex-col min-h-screen bg-page-bg text-text-primary">
         <AnnouncementBanner />
         <Navbar />
         

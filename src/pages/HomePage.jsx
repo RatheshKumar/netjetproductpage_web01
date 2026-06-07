@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import WaitlistForm from '../components/WaitlistForm.jsx';
 import SpotCounter from '../components/SpotCounter.jsx';
+import navbarLogo from '../assets/navbarlogo.png';
+import mainLogo from '../assets/MainLogo.jpg';
 import ScrollFeatureShowcase from '../components/ScrollFeatureShowcase.jsx';
 import useScrollAnimation from '../hooks/useScrollAnimation.js';
 
@@ -73,100 +75,30 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
               </div>
             </div>
 
-            {/* Right Column: Dashboard Mockup */}
-            <div className="relative fade-in-up lg:translate-x-10" style={{ animationDelay: '0.1s' }}>
-              <div className="absolute -inset-4 bg-white/10 rounded-[2.5rem] blur-3xl opacity-30" />
-              <div className="relative bg-white rounded-2xl shadow-[0_20px_60px_rgba(61,59,175,0.25)] overflow-hidden aspect-[4/3] flex border border-border-light">
+            {/* Right Column: Main Logo Premium 3D Presentation Frame */}
+            <div className="relative flex justify-center items-center fade-in-up lg:translate-x-10 w-full [perspective:1000px]" style={{ animationDelay: '0.1s' }}>
+              {/* Vibrant Ambient Glow behind */}
+              <div className="absolute -inset-10 bg-gradient-to-tr from-brand-indigo via-accent-pink to-accent-orange rounded-full blur-[120px] opacity-30 animate-pulse" />
+              
+              {/* 3D Tilted Card Container */}
+              <div className="relative bg-white/[0.03] backdrop-blur-xl rounded-2xl border border-white/20 p-3 shadow-[0_50px_100px_rgba(0,0,0,0.6)] max-w-lg w-full aspect-[4/3] flex items-center justify-center transform lg:[transform:rotateX(10deg)_rotateY(-18deg)_rotateZ(5deg)] transition-all duration-700 hover:[transform:rotateX(5deg)_rotateY(-8deg)_rotateZ(2deg)] hover:shadow-[0_60px_120px_rgba(232,25,122,0.25)]">
                 
-                {/* Mockup Sidebar */}
-                <div className="w-16 lg:w-48 border-r border-border-light bg-page-bg/50 flex flex-col p-4">
-                  <div className="flex items-center space-x-2 mb-10 px-2 group">
-                    <Rocket className="text-brand-indigo" size={20} />
-                    <span className="hidden lg:block font-extrabold text-[12px] text-brand-indigo tracking-tight">NetJetGo</span>
-                  </div>
-                  <div className="space-y-5">
-                    {[
-                      { icon: LayoutDashboard, label: "Dashboard", active: true },
-                      { icon: Target, label: "Leads" },
-                      { icon: Users, label: "Contacts" },
-                      { icon: Briefcase, label: "Employees" },
-                      { icon: FileText, label: "Payroll" }
-                    ].map((item, idx) => (
-                      <div key={idx} className={`flex items-center space-x-3 p-2.5 rounded-lg transition-colors ${
-                        item.active ? 'bg-brand-indigo/10 text-brand-indigo font-semibold' : 'text-text-muted hover:text-text-primary'
-                      }`}>
-                        <item.icon size={18} />
-                        <span className="hidden lg:block text-[11px] font-bold uppercase tracking-wider">{item.label}</span>
-                      </div>
-                    ))}
-                  </div>
+                {/* Outward Glass Highlight Border */}
+                <div className="absolute inset-0 rounded-2xl border border-white/10 pointer-events-none" />
+
+                {/* Main Logo Image */}
+                <img src={mainLogo} alt="NetJetGo Main Logo" className="w-full h-full object-cover rounded-xl" />
+
+                {/* Floating Glassmorphic Overlay Badge 1 (Top Left) */}
+                <div className="absolute -left-6 -top-6 bg-slate-900/80 backdrop-blur-xl border border-white/15 rounded-xl px-4 py-2.5 shadow-2xl flex items-center space-x-2.5 transition-all duration-500 hover:translate-y-[-2px] pointer-events-none">
+                  <div className="w-2.5 h-2.5 rounded-full bg-accent-pink animate-ping" />
+                  <span className="text-[11px] font-bold text-white uppercase tracking-wider font-mono">✦ Platform Hub</span>
                 </div>
 
-                {/* Mockup Main Content */}
-                <div className="flex-grow flex flex-col h-full bg-white">
-                  {/* Topbar */}
-                  <div className="h-16 border-b border-border-light flex items-center justify-between px-6">
-                    <h3 className="text-[13px] font-bold text-text-primary font-display">Good morning 👋</h3>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-32 lg:w-48 h-9 bg-page-bg rounded-lg border border-border-light flex items-center px-3">
-                        <Search size={14} className="text-text-subtle mr-2" />
-                        <div className="w-full h-1.5 bg-border-light rounded-full" />
-                      </div>
-                      <Bell size={18} className="text-text-muted" />
-                    </div>
-                  </div>
-
-                  {/* Dashboard Content */}
-                  <div className="p-6 space-y-6 overflow-hidden">
-                    {/* Stat Cards */}
-                    <div className="grid grid-cols-2 gap-4">
-                      {[
-                        { label: "Total Leads", val: "142", sub: "+12%", accent: "brand-indigo" },
-                        { label: "Active Staff", val: "38", sub: "2 on leave", accent: "accent-orange" },
-                        { label: "Monthly Payroll", val: "₹4.2L", sub: "3 pending", accent: "accent-pink" },
-                        { label: "Leave Requests", val: "7", sub: "4 pending", accent: "brand-indigo" }
-                      ].map((stat, i) => (
-                        <div key={i} className="bg-white border border-border-light rounded-xl p-4 border-l-4" style={{ borderColor: `var(--color-${stat.accent})` }}>
-                          <p className="text-[10px] font-bold text-text-muted uppercase tracking-widest mb-1">{stat.label}</p>
-                          <div className="flex items-baseline justify-between">
-                            <span className="text-[20px] font-extrabold text-text-primary font-mono">{stat.val}</span>
-                            <span className="text-[9px] font-bold text-accent-pink">{stat.sub}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Chart & Table Row */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                      <div className="bg-page-bg/50 border border-border-light rounded-xl p-4 h-32 flex flex-col">
-                        <p className="text-[9px] font-bold text-text-muted uppercase mb-4">Lead Growth</p>
-                        <div className="flex-grow flex items-end justify-between px-1 gap-2">
-                          {[35, 60, 45, 80, 55, 90].map((h, i) => (
-                            <div key={i} className="flex-grow bg-brand-indigo/20 rounded-t-sm relative group">
-                              <div 
-                                className="absolute bottom-0 left-0 w-full bg-brand-indigo rounded-t-sm transition-all duration-500"
-                                style={{ height: `${h}%` }}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="bg-page-bg/50 border border-border-light rounded-xl p-4 hidden lg:block">
-                        <p className="text-[9px] font-bold text-text-muted uppercase mb-3">Priority Leads</p>
-                        <div className="space-y-2">
-                          {[
-                            { n: "Arjun S.", s: "HOT" },
-                            { n: "Priya M.", s: "WARM" }
-                          ].map((row, i) => (
-                            <div key={i} className="flex items-center justify-between p-2 bg-white rounded border border-border-light text-[10px]">
-                              <span className="font-bold text-text-primary">{row.n}</span>
-                              <span className={row.s === 'HOT' ? 'text-accent-pink font-bold' : 'text-accent-orange font-bold'}>{row.s}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                {/* Floating Glassmorphic Overlay Badge 2 (Bottom Right) */}
+                <div className="absolute -right-6 -bottom-6 bg-slate-900/80 backdrop-blur-xl border border-white/15 rounded-xl px-4 py-2.5 shadow-2xl flex items-center space-x-2.5 transition-all duration-500 hover:translate-y-[-2px] pointer-events-none">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <span className="text-[11px] font-bold text-white uppercase tracking-wider font-mono">Status: Connected</span>
                 </div>
               </div>
             </div>
