@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Clock, UserPlus, UserMinus, Wallet, Package, CheckCircle2 } from 'lucide-react';
+import { Target, TrendingUp, Users, Zap, BarChart, CheckCircle2 } from 'lucide-react';
 
 import AttendanceImg  from '../assets/Attendance.png';
 import OnboardingImg  from '../assets/Onboarding.png';
@@ -9,71 +9,71 @@ import AssetsImg      from '../assets/Assets.png';
 
 const FEATURES = [
   {
-    id: 'attendance',
-    icon: Clock,
-    title: 'Attendance Tracking',
+    id: 'leads',
+    icon: Target,
+    title: 'Lead Tracking & Management',
     description:
-      'Automated clock-in/out with geo-fencing support. Track remote and in-office attendance effortlessly, with real-time sync directly into payroll.',
+      'Capture and organize leads from multiple sources in real time. Track interactions, prioritize hot prospects, and assign them automatically to your sales reps.',
     bullets: [
-      'GPS & Geo-fencing clock-ins for field staff',
-      'Real-time timesheet & break logs sync',
-      'Auto-overtime & shift roster management'
+      'Multi-channel lead capture (web, ads, email)',
+      'Real-time communication timeline logs',
+      'AI lead scoring and smart routing'
     ],
     image: AttendanceImg,
     accent: '#E8197A',
   },
   {
-    id: 'onboarding',
-    icon: UserPlus,
-    title: 'Employee Onboarding',
+    id: 'pipelines',
+    icon: TrendingUp,
+    title: 'Visual Sales Pipelines',
     description:
-      'Streamline new hire experiences with automated workflows. Document collection, training schedules, and team introductions — all on autopilot.',
+      'Manage deal progression visually. Customize kanban boards for your sales cycles, move deals across stages with drag-and-drop, and spot bottlenecks.',
     bullets: [
-      'Self-service digital document verification',
-      'Automated welcome kits & training tasks',
-      'One-click IT tool & asset allocation'
+      'Custom stage configurations for different products',
+      'Drag-and-drop deal status updates',
+      'Interactive deal value and forecast metrics'
     ],
     image: OnboardingImg,
     accent: '#F5A623',
   },
   {
-    id: 'offboarding',
-    icon: UserMinus,
-    title: 'Smooth Offboarding',
+    id: 'contacts',
+    icon: Users,
+    title: 'Contact & Account Management',
     description:
-      'Handle exits gracefully with structured checklists. Asset recovery, knowledge transfer, and exit interviews unified in a single clean flow.',
+      'Keep a complete history of every contact and account. Understand customer interactions, purchase history, outstanding tasks, and support tickets.',
     bullets: [
-      'Automated clearance approval workflows',
-      'Deprovisioning accounts & access control',
-      'Exit interviews & final settlement tracking'
+      'Structured profiles for contacts & companies',
+      'Integrated activity tracking & note taking',
+      'Shared visibility across customer support & sales'
     ],
     image: OffboardingImg,
     accent: '#A78BFA',
   },
   {
-    id: 'payroll',
-    icon: Wallet,
-    title: 'Smart Payroll',
+    id: 'automation',
+    icon: Zap,
+    title: 'Sales Workflow Automation',
     description:
-      'One-click payroll processing fully compliant with Indian tax laws. Auto-computes salaries synced with attendance and approved leave data.',
+      'Eliminate repetitive sales tasks. Automate lead assignations, follow-up emails, task reminders, and customer status updates with ease.',
     bullets: [
-      'Instant payslips sent via WhatsApp & Email',
-      'Auto compliance: PF, PT, TDS, ESI, LWF',
-      'Integrated payroll bank transfer processing'
+      'Trigger-based automated email & WhatsApp alerts',
+      'Instant task assignment & reminder notifications',
+      'Standardized email templates and sequence plans'
     ],
     image: PayrollImg,
     accent: '#34D399',
   },
   {
-    id: 'assets',
-    icon: Package,
-    title: 'Asset Management',
+    id: 'analytics',
+    icon: BarChart,
+    title: 'Sales Analytics & Forecasting',
     description:
-      'Track every laptop, phone, and piece of equipment assigned to your team. Full lifecycle management from procurement to retirement.',
+      'Get clear visibility into sales performance and revenue goals. Custom dashboards and automated reports help forecast monthly sales and track rep performance.',
     bullets: [
-      'One-click serial number & status mapping',
-      'Asset handover agreement forms & e-sign',
-      'Maintenance cycles & depreciation tracking'
+      'Detailed revenue & conversion analytics reports',
+      'Team leaderboards & individual performance tracking',
+      'Historical deal cycle analytics and trend lines'
     ],
     image: AssetsImg,
     accent: '#60A5FA',
@@ -202,8 +202,7 @@ const ScrollFeatureShowcase = () => {
                 <span className="sc-heading-gradient">in one place.</span>
               </h2>
               <p className="sc-subtext">
-                From hiring to payroll, attendance to assets — NetJetGo gives
-                your entire business one intelligent home.
+                From lead tracking to pipeline stages, email campaigns to sales forecasting — NetJetGo gives your sales team one intelligent home.
               </p>
             </div>
 

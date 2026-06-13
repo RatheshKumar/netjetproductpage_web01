@@ -50,12 +50,12 @@ const PricingPage = () => {
       name: "Growth",
       price: billingCycle === 'annual' ? 1499 : 2499,
       origPrice: billingCycle === 'annual' ? 2499 : 3999,
-      desc: "Perfect for scaling SMEs needing CRM + HRM power.",
+      desc: "Perfect for scaling SMEs needing advanced CRM power.",
       features: [
         "Up to 25 Users",
-        "Unified CRM + HRM",
+        "Full CRM Suite",
         "Full AI Assistant",
-        "Payroll Automation",
+        "Sales Automation",
         "WhatsApp Integration",
         "10GB Document Storage",
         "Priority Support"
@@ -195,7 +195,7 @@ const PricingPage = () => {
               },
               {
                 q: "Do you offer migration support?",
-                a: "Yes. Founding members get 'White Glove Migration'. We'll handle the data export and import from Zoho CRM, Keka, or Excel for you."
+                a: "Yes. Founding members get 'White Glove Migration'. We'll handle the data export and import from Zoho CRM, HubSpot, or Excel for you."
               },
               {
                 q: "Is NetJetGo compliant with Indian laws?",

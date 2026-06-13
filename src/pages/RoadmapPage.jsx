@@ -33,7 +33,7 @@ const RoadmapPage = () => {
       status: "complete",
       date: "Q1 2026",
       desc: "Building the engine that powers NetJetGo.",
-      items: ["CRM Core (Leads, Contacts)", "HRM Core (Payroll, Leaves)", "JWT Auth & RBAC", "Unified Dashboard v1"]
+      items: ["CRM Core (Leads, Contacts)", "Deal Pipelines", "JWT Auth & RBAC", "CRM Dashboard v1"]
     },
     {
       id: 2,
@@ -49,7 +49,7 @@ const RoadmapPage = () => {
       status: "in-progress",
       date: "Q3 2026 (Launch)",
       desc: "Enhancing connectivity and scale.",
-      items: ["WhatsApp API Sync", "Payroll Bulk processing", "Mobile PWA Experience", "Recruitment Module"]
+      items: ["WhatsApp API Sync", "Email Campaign Engine", "Mobile PWA Experience", "Custom Fields Module"]
     },
     {
       id: 4,

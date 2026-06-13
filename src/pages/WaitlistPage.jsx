@@ -206,7 +206,7 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
                   <div className="space-y-4">
                     <label className="text-[11px] font-bold text-text-muted uppercase tracking-widest ml-1">Current Tools</label>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                      {['Zoho', 'Keka', 'HubSpot', 'Salesforce', 'Excel', 'Other'].map(tool => (
+                      {['Zoho', 'Pipedrive', 'HubSpot', 'Salesforce', 'Excel', 'Other'].map(tool => (
                         <button key={tool} type="button" onClick={() => handleToolChange(tool)} className={`py-3 px-4 rounded-[10px] border text-[11px] font-bold transition-all ${formData.tools.includes(tool) ? 'bg-brand-indigo/10 border-brand-indigo text-brand-indigo' : 'bg-white border-border-light text-text-muted hover:border-text-subtle'}`}>
                           {tool}
                         </button>
@@ -239,9 +239,9 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-1">
             {[
-              { q: "Finally, one tool for sales AND staff. This changes everything for our 40-person team.", a: "Priya", c: "Bangalore" },
-              { q: "Replaced two expensive tools in the beta. The AI assistant alone is worth the subscription.", a: "Arjun", c: "Chennai" },
-              { q: "Payroll is exactly what we needed. Simple, accurate, and saves us days of work.", a: "Meera", c: "Hyderabad" }
+              { q: "Finally, one platform for tracking deals and client conversations. This changes everything for our sales reps.", a: "Priya", c: "Bangalore" },
+              { q: "Replaced two expensive CRM tools in the beta. The AI assistant alone is worth the subscription.", a: "Arjun", c: "Chennai" },
+              { q: "The visual sales pipeline is exactly what we needed. Simple, intuitive, and helps us close deals faster.", a: "Meera", c: "Hyderabad" }
             ].map((item, i) => (
               <div key={i} className="fade-in-up">
                 <TestimonialCard quote={item.q} author={item.a} city={item.c} />

@@ -50,7 +50,7 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
               </h1>
               
               <p className="text-[17px] text-white/75 leading-relaxed max-w-xl font-medium">
-                Stop switching between Zoho, Keka, and Excel. NetJetGo unifies your CRM and HRM into one intelligent platform. Everything your business runs on — one login.
+                Stop switching between Zoho, HubSpot, and Excel. NetJetGo unifies your lead tracking, pipelines, and sales automation into one intelligent platform. Everything your sales runs on — one login.
               </p>
               
               <div className="space-y-8 pt-4">
@@ -133,7 +133,7 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
           <div className="text-center mb-20 fade-in-up">
             <h2 className="text-text-primary mb-6">The old way is <span className="text-accent-pink">costly</span></h2>
             <p className="text-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
-              Managing sales and staff on disconnected tools leads to data silos, expensive subscriptions, and human error.
+              Managing sales and pipelines on disconnected tools leads to data silos, expensive subscriptions, and lost deals.
             </p>
           </div>
 
@@ -141,9 +141,9 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
             {/* Problems */}
             <div className="space-y-6 fade-in-up">
               {[
-                "Paying ₹8,000+/mo for separate CRM and HR tools",
-                "Your sales team has no idea who's on leave today",
-                "Endless manual data entry between Zoho and Excel"
+                "Paying ₹8,000+/mo for separate lead, pipeline, and email tools",
+                "Your sales reps have no idea which lead to follow up with first",
+                "Endless manual data entry between multiple sales spreadsheets"
               ].map((text, i) => (
                 <div key={i} className="bg-page-bg border border-border-light rounded-[14px] p-8 flex items-start space-x-5 group hover:border-accent-pink/30 transition-all">
                   <div className="bg-accent-pink/10 p-2.5 rounded-lg text-accent-pink group-hover:scale-110 transition-transform">
@@ -166,9 +166,9 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
             {/* Solutions */}
             <div className="space-y-6 fade-in-up" style={{ animationDelay: '0.1s' }}>
               {[
-                "One simple subscription for your whole business",
-                "CRM + HRM sync: Real-time visibility across teams",
-                "AI-powered automation: Say goodbye to manual entry"
+                "One simple subscription for all your sales operations",
+                "Unified CRM: Real-time visibility across your entire pipeline",
+                "AI-powered automation: Say goodbye to manual follow-ups"
               ].map((text, i) => (
                 <div key={i} className="bg-brand-indigo/5 border-2 border-brand-indigo/20 rounded-[14px] p-8 flex items-start space-x-5 group hover:bg-brand-indigo/10 transition-all">
                   <div className="bg-brand-indigo/10 p-2.5 rounded-lg text-brand-indigo group-hover:scale-110 transition-transform">
@@ -205,8 +205,8 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
                 color: "accent-pink"
               },
               { 
-                title: "Smart Payroll", 
-                desc: "One-click payroll processing. Compliant with Indian tax laws and syncs with attendance.", 
+                title: "Deal Automation", 
+                desc: "Automate follow-ups, lead assignment, and notifications to accelerate sales velocity.", 
                 icon: Briefcase,
                 color: "accent-orange"
               },

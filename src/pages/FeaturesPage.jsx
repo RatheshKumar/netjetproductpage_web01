@@ -24,7 +24,8 @@ import {
   CheckSquare,
   Smartphone,
   BarChart,
-  ArrowRight
+  ArrowRight,
+  Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useScrollAnimation from '../hooks/useScrollAnimation.js';
@@ -35,59 +36,59 @@ const FeaturesPage = () => {
   // Benefit cards data (6 items)
   const benefits = [
     {
-      title: "Centralized HR Operations",
-      desc: "Manage employee records, payroll, attendance, leave, recruitment, onboarding, offboarding, assets, and approvals from one centralized system. This reduces dependency on multiple disconnected tools.",
+      title: "Centralized Sales Operations",
+      desc: "Manage leads, contacts, deals, pipeline stages, client meetings, quotes, invoices, and automated follow-ups from one centralized system. This reduces dependency on multiple disconnected tools.",
       icon: Layers
     },
     {
-      title: "Saves HR Team Time",
-      desc: "Automate repetitive HR activities such as attendance calculation, leave approvals, payroll processing, and payslip generation. HR teams can focus more on strategic tasks instead of manual operations.",
+      title: "Saves Sales Team Time",
+      desc: "Automate repetitive sales activities such as lead assignment, follow-up emails, task reminders, and deal status updates. Sales teams can focus more on closing deals instead of manual operations.",
       icon: Clock
     },
     {
-      title: "Reduces Payroll Errors",
-      desc: "Integrated payroll processing ensures accurate salary calculations by syncing attendance, overtime, deductions, allowances, and tax components. This minimizes payroll mistakes and delays.",
+      title: "Accurate Revenue Forecasting",
+      desc: "Integrated sales pipelines and deal probability analysis ensure highly accurate sales forecasts. This minimizes uncertainty and helps teams plan business resources effectively.",
       icon: Calculator
     },
     {
-      title: "Employee Self-Service",
-      desc: "Employees can apply for leave, access payslips, check attendance, and update their profiles without HR intervention. This improves transparency and employee experience.",
+      title: "Customer Self-Service Portal",
+      desc: "Clients can check project progress, submit support tickets, pay outstanding invoices, and access shared contracts and files without manual intervention. This improves transparency and satisfaction.",
       icon: UserCheck
     },
     {
-      title: "Better Attendance Tracking",
-      desc: "Supports biometric integration, shift scheduling, overtime management, late tracking, and hybrid workforce monitoring. Businesses get accurate and real-time attendance data.",
+      title: "Better Lead Activity Tracking",
+      desc: "Track client interactions, website visits, email opens, link clicks, and past meetings. Sales reps get detailed, real-time context about every prospect's engagement.",
       icon: Fingerprint
     },
     {
-      title: "Improves Recruitment Process",
-      desc: "Track candidates, interviews, job postings, onboarding, and hiring stages through a structured recruitment workflow. This helps companies streamline and speed up hiring.",
+      title: "Improves Conversion Rates",
+      desc: "Score leads with AI, nurture prospects with automated drip campaigns, and manage interactions through a structured sales workflow. This helps companies close deals faster.",
       icon: Briefcase
     }
   ];
 
   // Platform Features data (20 items)
   const platformFeatures = [
-    { name: "Employee Management", icon: Users },
-    { name: "Employee Directory", icon: Contact },
-    { name: "Attendance Management", icon: Clock },
-    { name: "Biometric Integration", icon: Fingerprint },
-    { name: "Leave Management", icon: Calendar },
-    { name: "Payroll Processing", icon: CreditCard },
-    { name: "Payslip Generation", icon: FileText },
-    { name: "Overtime Calculation", icon: Coins },
-    { name: "Shift Management", icon: Shuffle },
-    { name: "Recruitment / ATS", icon: UserPlus },
-    { name: "Onboarding Management", icon: ClipboardCheck },
-    { name: "Offboarding Management", icon: LogOut },
-    { name: "Performance Management", icon: Activity },
-    { name: "OKR Tracking", icon: Target },
-    { name: "360 Degree Feedback", icon: MessageSquare },
-    { name: "Asset Management", icon: Laptop },
-    { name: "Help Desk / Ticketing", icon: HelpCircle },
-    { name: "Approval Workflows", icon: CheckSquare },
-    { name: "Employee Self-Service", icon: Smartphone },
-    { name: "HR Reports & Analytics", icon: BarChart }
+    { name: "Lead Tracking & Management", icon: Target },
+    { name: "Contact & Account Directory", icon: Users },
+    { name: "Visual Sales Pipelines", icon: Layers },
+    { name: "Deal Stage Automation", icon: Zap },
+    { name: "Email Sync & Templates", icon: FileText },
+    { name: "Activity Timeline Logging", icon: Clock },
+    { name: "Task & Meeting Scheduler", icon: Calendar },
+    { name: "AI Lead Scoring", icon: Fingerprint },
+    { name: "WhatsApp & SMS Campaigns", icon: MessageSquare },
+    { name: "Quotation & Invoice Builder", icon: Coins },
+    { name: "Customer Portal Access", icon: Smartphone },
+    { name: "Shared Team Inbox", icon: Users },
+    { name: "Sales Reports & Analytics", icon: BarChart },
+    { name: "Custom CRM Fields", icon: Shuffle },
+    { name: "Approval Workflows for Deals", icon: CheckSquare },
+    { name: "Customer Help Desk / Tickets", icon: HelpCircle },
+    { name: "Asset Assignment Tracking", icon: Laptop },
+    { name: "Performance Leaderboards", icon: Activity },
+    { name: "OKR & Sales Goal Tracking", icon: Target },
+    { name: "Contract & Document E-Sign", icon: ClipboardCheck }
   ];
 
   return (
@@ -101,10 +102,10 @@ const FeaturesPage = () => {
             </span>
           </div>
           <h1 className="text-white mb-6 max-w-4xl mx-auto leading-tight">
-            Why Businesses Need netjetgo HRMS
+            Why Businesses Need netjetgo CRM
           </h1>
           <p className="text-white/75 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Most growing companies eventually struggle with spreadsheets, manual attendance tracking, payroll errors, disconnected HR tools, and inefficient recruitment processes. netjetgo HRMS helps businesses simplify and automate complete HR operations from a single platform.
+            Most growing companies eventually struggle with spreadsheets, manual lead tracking, missed follow-ups, disconnected client tools, and inefficient sales processes. netjetgo CRM helps businesses simplify and automate complete sales operations from a single platform.
           </p>
         </div>
       </section>
@@ -116,7 +117,7 @@ const FeaturesPage = () => {
             <span className="text-brand-indigo text-[12px] font-extrabold uppercase tracking-widest mb-3 block">
               Core Benefits
             </span>
-            <h2 className="mb-4 text-text-primary">Supercharge Your HR Operations</h2>
+            <h2 className="mb-4 text-text-primary">Supercharge Your Sales Operations</h2>
             <p className="text-text-muted max-w-xl mx-auto">
               Say goodbye to fragmented tools and manual spreadsheets. Here is how netjetgo drives real business value.
             </p>
@@ -153,7 +154,7 @@ const FeaturesPage = () => {
               Platform Features
             </h2>
             <p className="text-text-muted max-w-xl mx-auto">
-              A comprehensive toolkit engineered to streamline every stage of the employee lifecycle.
+              A comprehensive toolkit engineered to streamline every stage of the customer lifecycle.
             </p>
           </div>
 

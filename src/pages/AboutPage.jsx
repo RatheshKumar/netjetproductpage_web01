@@ -13,7 +13,7 @@ const AboutPage = () => {
         <div className="max-w-[1200px] mx-auto px-6 fade-in-up">
           <h1 className="text-white mb-6">Built for the Backbone of India</h1>
           <p className="text-white/75 text-xl max-w-3xl mx-auto leading-relaxed">
-            NetJetGo was born out of frustration. Running a business shouldn't mean fighting with disconnected software. We're here to unify your sales and your people.
+            NetJetGo was born out of frustration. Running sales shouldn't mean fighting with disconnected software. We're here to unify your lead tracking and visual pipelines.
           </p>
         </div>
       </section>
@@ -25,7 +25,7 @@ const AboutPage = () => {
             <span className="text-brand-indigo text-6xl font-extrabold absolute top-8 left-8 opacity-10 font-display leading-none">“</span>
             <div className="relative z-10 text-center">
               <h2 className="text-2xl md:text-3xl font-extrabold text-text-primary font-display mb-10 leading-tight">
-                "We're building the tool we wish we had. One platform that knows your entire business — your sales pipeline, your team, and your payroll. Built specifically for how Indian SMEs work."
+                "We're building the tool we wish we had. One platform that knows your entire sales process — your leads, your visual pipeline, and your customer communications. Built specifically for how Indian SMEs scale."
               </h2>
               <div className="flex flex-col items-center">
                 <div className="w-12 h-1 bg-gradient-to-r from-brand-indigo to-accent-pink mb-4" />
@@ -103,7 +103,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-1">
             {[
               { 
-                text: "Phase 2 is officially complete! Our AI assistant can now fetch data across both CRM and HRM modules seamlessly.", 
+                text: "Phase 2 is officially complete! Our AI assistant can now fetch data across your visual pipeline and analytics modules seamlessly.", 
                 date: "April 2026" 
               },
               { 
