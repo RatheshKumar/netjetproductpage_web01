@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Rocket } from 'lucide-react';
 import navbarLogo from '../assets/navbarlogo.png';
@@ -88,31 +89,41 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 z-40 md:hidden bg-white transition-all duration-500 ease-in-out ${
-        isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
-      }`}>
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
+      {createPortal(
+        <div className={`fixed inset-0 z-[100] md:hidden bg-white transition-all duration-500 ease-in-out ${
+          isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+        }`}>
+          <div className="flex flex-col items-center justify-center h-full space-y-8 relative">
+            {/* Close button at top right */}
+            <button
               onClick={() => setIsOpen(false)}
-              className={`text-2xl font-bold font-display ${
-                isActive(link.path) ? 'text-brand-indigo' : 'text-text-primary'
-              }`}
+              className="absolute top-6 right-6 text-text-muted hover:text-text-primary transition-colors"
             >
-              {link.name}
+              <X size={28} />
+            </button>
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`text-2xl font-bold font-display ${
+                  isActive(link.path) ? 'text-brand-indigo' : 'text-text-primary'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link
+              to="/waitlist"
+              onClick={() => setIsOpen(false)}
+              className="btn-primary text-lg px-10 py-4"
+            >
+              Start Free Trial
             </Link>
-          ))}
-          <Link
-            to="/waitlist"
-            onClick={() => setIsOpen(false)}
-            className="btn-primary text-lg px-10 py-4"
-          >
-            Start Free Trial
-          </Link>
-        </div>
-      </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </nav>
   );
 };
