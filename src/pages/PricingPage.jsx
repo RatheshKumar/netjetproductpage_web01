@@ -26,59 +26,50 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const PricingPage = () => {
-  const [billingCycle, setBillingCycle] = useState('annual');
   const scrollRef = useScrollAnimation();
 
   const pricingData = [
     {
-      name: "Starter",
-      price: billingCycle === 'annual' ? 999 : 1499,
-      origPrice: billingCycle === 'annual' ? 1999 : 2499,
-      desc: "For solopreneurs and tiny teams starting their journey.",
+      name: "Essential",
+      desc: "For small businesses starting to digitize operations.",
       features: [
-        "Up to 5 Users",
-        "CRM Core Module",
-        "Pipeline Management",
-        "Basic Lead Scoring",
-        "Email Support",
-        "2GB Document Storage"
+        "Best for: 5–25 employees",
+        "Core HR operations & directory",
+        "Attendance & time tracking",
+        "Employee onboarding checklists",
+        "Basic document portal"
       ],
-      cta: "Join Starter",
+      cta: "Schedule a Demo",
       highlight: false
     },
     {
-      name: "Growth",
-      price: billingCycle === 'annual' ? 1499 : 2499,
-      origPrice: billingCycle === 'annual' ? 2499 : 3999,
-      desc: "Perfect for scaling SMEs needing advanced CRM power.",
+      name: "Professional",
+      desc: "For growing teams that need automation.",
       features: [
-        "Up to 25 Users",
-        "Full CRM Suite",
-        "Full AI Assistant",
-        "Sales Automation",
-        "WhatsApp Integration",
-        "10GB Document Storage",
-        "Priority Support"
+        "Best for: 25–100 employees",
+        "Everything in Essential, plus more",
+        "Automated payroll processing",
+        "Offboarding management workflows",
+        "Custom approval roles & logs",
+        "Priority support & assistance"
       ],
-      cta: "Lock Growth Price",
+      cta: "Talk to Sales",
       highlight: true,
       badge: "MOST POPULAR"
     },
     {
       name: "Enterprise",
-      price: billingCycle === 'annual' ? 4199 : 6999,
-      origPrice: billingCycle === 'annual' ? 6999 : 9999,
-      desc: "Unlimited power for established companies with complex ops.",
+      desc: "For organizations requiring customization.",
       features: [
-        "Unlimited Users",
-        "Everything in Growth",
-        "Custom RBAC Roles",
-        "Advanced Analytics",
-        "API & Zapier Access",
-        "Dedicated Success Lead",
-        "Custom Data Migration"
+        "Best for: 100+ employees",
+        "Everything in Professional, plus more",
+        "Enterprise-grade compliance",
+        "Custom RBAC & workflow builders",
+        "Dedicated database residency",
+        "Dedicated success representative",
+        "Custom integrations & API access"
       ],
-      cta: "Join Enterprise",
+      cta: "Request a Proposal",
       highlight: false
     }
   ];
@@ -89,35 +80,15 @@ const PricingPage = () => {
       <section className="section-indigo pt-32 lg:pt-40 pb-32 overflow-hidden text-center">
         <div className="max-w-[1200px] mx-auto px-6 fade-in-up">
           <h1 className="text-white mb-6">Simple, Transparent Pricing</h1>
-          <p className="text-white/75 text-xl max-w-2xl mx-auto mb-12">
+          <p className="text-white/75 text-xl max-w-2xl mx-auto">
             No hidden fees. One subscription for your whole business. Start your 14-day free trial today.
           </p>
-
-          <div className="max-w-2xl mx-auto bg-white/10 border border-white/20 rounded-[18px] p-4 text-white font-bold flex items-center justify-center space-x-3 shadow-xl">
-            <span className="text-accent-orange">🔥 Early Bird Special:</span>
-            <span className="text-[15px]">Prices locked for the lifetime of your account.</span>
-          </div>
         </div>
       </section>
 
       {/* SECTION 2: PRICING CARDS (ALT LIGHT) */}
       <section className="section-alt py-24">
         <div className="max-w-[1200px] mx-auto px-6">
-          {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-6 mb-20 fade-in-up">
-            <span className={`text-[15px] font-bold ${billingCycle === 'monthly' ? 'text-text-primary' : 'text-text-muted'}`}>Monthly Billing</span>
-            <button 
-              onClick={() => setBillingCycle(prev => prev === 'monthly' ? 'annual' : 'monthly')}
-              className="w-16 h-8 bg-white border border-border-medium rounded-full p-1 relative transition-all hover:border-brand-indigo"
-            >
-              <div className={`w-6 h-6 bg-brand-indigo rounded-full transition-transform duration-300 ${billingCycle === 'annual' ? 'translate-x-8' : 'translate-x-0'}`} />
-            </button>
-            <div className="flex items-center space-x-2">
-              <span className={`text-[15px] font-bold ${billingCycle === 'annual' ? 'text-text-primary' : 'text-text-muted'}`}>Annual Billing</span>
-              <span className="bg-brand-indigo/10 text-brand-indigo text-[11px] font-bold px-2 py-0.5 rounded-full border border-brand-indigo/20">SAVE 40%</span>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch stagger-1">
             {pricingData.map((plan, i) => (
               <div 
@@ -137,17 +108,6 @@ const PricingPage = () => {
                 <div className="mb-10">
                   <h3 className="text-2xl font-extrabold mb-3 font-display">{plan.name}</h3>
                   <p className="text-text-muted text-[14px] leading-relaxed">{plan.desc}</p>
-                </div>
-
-                <div className="mb-10">
-                  <div className="flex items-center space-x-3 mb-2">
-                    <span className="text-text-subtle line-through text-lg">₹{plan.origPrice}</span>
-                    <span className="text-accent-pink text-[12px] font-extrabold tracking-widest uppercase">Early Bird</span>
-                  </div>
-                  <div className="flex items-baseline space-x-2">
-                    <span className="text-5xl font-extrabold text-text-primary font-display tracking-tight">₹{plan.price}</span>
-                    <span className="text-text-muted font-medium">/mo</span>
-                  </div>
                 </div>
 
                 <ul className="space-y-4 mb-12 flex-grow">
@@ -180,26 +140,26 @@ const PricingPage = () => {
         <div className="max-w-[800px] mx-auto px-6">
           <div className="text-center mb-16 fade-in-up">
             <h2 className="mb-4">Common Questions</h2>
-            <p className="text-text-muted">Everything you need to know about the founding cohort.</p>
+            <p className="text-text-muted">Everything you need to know about NetJetGo's pricing and onboarding.</p>
           </div>
 
           <div className="bg-white border border-border-light rounded-[18px] overflow-hidden fade-in-up">
             {[
               {
-                q: "What does 'Price Locked Forever' mean?",
-                a: "If you join as a founding member at ₹1,499, that is your price for life. Even if we increase our public pricing to ₹5,000 in two years, your bill will never change."
+                q: "How can I evaluate NetJetGo?",
+                a: "You can schedule a demo or request a proposal. We also offer a 14-day free trial following a brief consultation to tailor the platform for your organization."
               },
               {
-                q: "Is there a per-user fee?",
-                a: "No. Unlike Zoho or Salesforce, NetJetGo uses simple flat-rate tiers. A single 'Growth' plan covers your entire team up to 25 users."
+                q: "How is pricing calculated?",
+                a: "We offer flexible pricing tiers designed around the size of your workforce. Contact our sales team to receive a quote matching your specific headcount and requirements."
               },
               {
-                q: "Do you offer migration support?",
-                a: "Yes. Founding members get 'White Glove Migration'. We'll handle the data export and import from Zoho CRM, HubSpot, or Excel for you."
+                q: "Do you assist with data migration?",
+                a: "Yes, our team handles the export and import of your existing employee records, payroll logs, and documents from legacy systems at no extra cost."
               },
               {
-                q: "Is NetJetGo compliant with Indian laws?",
-                a: "Absolutely. We are fully compliant with the DPDPA 2023 and our servers are located in Mumbai to ensure data residency."
+                q: "Is NetJetGo compliant with data residency regulations?",
+                a: "Yes, we support enterprise-grade security compliance and offer flexible cloud deployment options to satisfy local data residency requirements."
               }
             ].map((faq, i) => (
               <FAQItem key={i} question={faq.q} answer={faq.a} />
