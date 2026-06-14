@@ -47,7 +47,7 @@ const RoadmapPage = () => {
       id: 3,
       title: "Automation & Expansion",
       status: "in-progress",
-      date: "Q3 2026 (Launch)",
+      date: "Q3 2026 (Live)",
       desc: "Enhancing connectivity and scale.",
       items: ["WhatsApp API Sync", "Email Campaign Engine", "Mobile PWA Experience", "Custom Fields Module"]
     },
@@ -164,10 +164,10 @@ const RoadmapPage = () => {
       {/* SECTION 4: CTA (INDIGO) */}
       <section className="section-indigo py-32 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10 fade-in-up">
-          <h2 className="text-white mb-6">Join the Journey</h2>
-          <p className="text-white/75 text-lg mb-12">Influence the product direction as a founding member.</p>
+          <h2 className="text-white mb-6">Get Started Today</h2>
+          <p className="text-white/75 text-lg mb-12">Start your 14-day free trial and experience the unified HRM OS.</p>
           <Link to="/waitlist" className="btn-primary py-5 px-14 text-lg inline-flex items-center space-x-3 shadow-xl">
-            <span>Join the Waitlist</span>
+            <span>Start Free Trial</span>
             <ArrowRight size={22} />
           </Link>
         </div>

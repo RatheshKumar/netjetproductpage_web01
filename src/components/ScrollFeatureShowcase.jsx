@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Target, TrendingUp, Users, Zap, BarChart, CheckCircle2 } from 'lucide-react';
+import { Clock, UserPlus, LogOut, Coins, Laptop, CheckCircle2 } from 'lucide-react';
 
 import AttendanceImg  from '../assets/Attendance.png';
 import OnboardingImg  from '../assets/Onboarding.png';
@@ -9,71 +9,71 @@ import AssetsImg      from '../assets/Assets.png';
 
 const FEATURES = [
   {
-    id: 'leads',
-    icon: Target,
-    title: 'Lead Tracking & Management',
+    id: 'attendance',
+    icon: Clock,
+    title: 'Attendance & Time Tracking',
     description:
-      'Capture and organize leads from multiple sources in real time. Track interactions, prioritize hot prospects, and assign them automatically to your sales reps.',
+      'Track employee check-ins, check-outs, and daily attendance records in real time. Monitor on-time performance and approve overtime requests instantly from a single dashboard.',
     bullets: [
-      'Multi-channel lead capture (web, ads, email)',
-      'Real-time communication timeline logs',
-      'AI lead scoring and smart routing'
+      'Real-time check-in/out logging and tracking',
+      'On-time vs. late attendance analytics',
+      'Overtime approval and leave request workflows'
     ],
     image: AttendanceImg,
     accent: '#E8197A',
   },
   {
-    id: 'pipelines',
-    icon: TrendingUp,
-    title: 'Visual Sales Pipelines',
+    id: 'onboarding',
+    icon: UserPlus,
+    title: 'Employee Onboarding',
     description:
-      'Manage deal progression visually. Customize kanban boards for your sales cycles, move deals across stages with drag-and-drop, and spot bottlenecks.',
+      'Streamline the hiring and onboarding journey for new team members. Track recruitment drives, candidate application stages, and document submissions seamlessly.',
     bullets: [
-      'Custom stage configurations for different products',
-      'Drag-and-drop deal status updates',
-      'Interactive deal value and forecast metrics'
+      'Custom candidate recruitment pipeline stages',
+      'Automated onboarding task lists and checklists',
+      'Portal status tracking and employee profile creation'
     ],
     image: OnboardingImg,
     accent: '#F5A623',
   },
   {
-    id: 'contacts',
-    icon: Users,
-    title: 'Contact & Account Management',
+    id: 'offboarding',
+    icon: LogOut,
+    title: 'Offboarding Management',
     description:
-      'Keep a complete history of every contact and account. Understand customer interactions, purchase history, outstanding tasks, and support tickets.',
+      'Manage employee departures, notice periods, and resignation workflows with complete clarity. Ensure smooth transition of tasks and clean exit processes.',
     bullets: [
-      'Structured profiles for contacts & companies',
-      'Integrated activity tracking & note taking',
-      'Shared visibility across customer support & sales'
+      'Notice period tracking and end-date management',
+      'Resignation letter logging and exit interview scheduling',
+      'Handover task tracking and clearance checklists'
     ],
     image: OffboardingImg,
     accent: '#A78BFA',
   },
   {
-    id: 'automation',
-    icon: Zap,
-    title: 'Sales Workflow Automation',
+    id: 'payroll',
+    icon: Coins,
+    title: 'Payroll Processing',
     description:
-      'Eliminate repetitive sales tasks. Automate lead assignations, follow-up emails, task reminders, and customer status updates with ease.',
+      'Simplify salary calculations and generate employee payslips automatically. Track department expenditures, allowances, deductions, and tax compliance.',
     bullets: [
-      'Trigger-based automated email & WhatsApp alerts',
-      'Instant task assignment & reminder notifications',
-      'Standardized email templates and sequence plans'
+      'Automated payslip generation and total amount tracking',
+      'Allowance, deduction, and advance salary logs',
+      'Department-wise payroll budget analysis'
     ],
     image: PayrollImg,
     accent: '#34D399',
   },
   {
-    id: 'analytics',
-    icon: BarChart,
-    title: 'Sales Analytics & Forecasting',
+    id: 'assets',
+    icon: Laptop,
+    title: 'Asset Allocation & Management',
     description:
-      'Get clear visibility into sales performance and revenue goals. Custom dashboards and automated reports help forecast monthly sales and track rep performance.',
+      'Track company assets, device allocations, and hardware requests in one place. Monitor laptops, accessories, and other inventory assigned to team members.',
     bullets: [
-      'Detailed revenue & conversion analytics reports',
-      'Team leaderboards & individual performance tracking',
-      'Historical deal cycle analytics and trend lines'
+      'Real-time asset inventory and status tracking (available vs. in-use)',
+      'Device request workflows and approval logs',
+      'Detailed allocation history and user assignment'
     ],
     image: AssetsImg,
     accent: '#60A5FA',
@@ -83,18 +83,9 @@ const FEATURES = [
 const ScrollFeatureShowcase = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  
-  // 'above' = section hasn't reached viewport yet, image flows normally at top
-  // 'fixed' = section in view, image is position:fixed in viewport center
-  // 'below' = section scrolled past, image anchored at bottom
-  const [imageMode, setImageMode] = useState('above');
-  const [fixedRight, setFixedRight] = useState(0);
-  const [fixedWidth, setFixedWidth] = useState(0);
 
   const sectionRef = useRef(null);
   const featureRefs = useRef([]);
-  const rightColRef = useRef(null);
-  const containerRef = useRef(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -106,26 +97,6 @@ const ScrollFeatureShowcase = () => {
   }, []);
 
   const handleScroll = useCallback(() => {
-    if (window.innerWidth < 1024) return;
-    const rightCol = rightColRef.current;
-    const container = containerRef.current;
-    if (!rightCol) return;
-
-    const rRect = rightCol.getBoundingClientRect();
-    const panelH = container ? container.getBoundingClientRect().height : 450;
-    const pad = 120; // top padding when fixed
-
-    // Smooth and mathematically precise transition boundaries
-    if (rRect.top > pad) {
-      setImageMode('above');
-    } else if (rRect.bottom < pad + panelH) {
-      setImageMode('below');
-    } else {
-      setImageMode('fixed');
-      setFixedRight(window.innerWidth - rRect.right);
-      setFixedWidth(rRect.width);
-    }
-
     // Determine active feature based on midpoint proximity to 40% of viewport
     const trigger = window.innerHeight * 0.4;
     let best = 0;
@@ -140,7 +111,7 @@ const ScrollFeatureShowcase = () => {
         best = i;
       }
     });
-    setActiveIndex(best);
+    setActiveIndex(prev => prev !== best ? best : prev);
   }, []);
 
   useEffect(() => {
@@ -154,34 +125,6 @@ const ScrollFeatureShowcase = () => {
   }, [handleScroll]);
 
   const active = FEATURES[activeIndex];
-
-  // Build dynamic style for the image container
-  const getImageStyle = () => {
-    if (isMobile) return {};
-    
-    if (imageMode === 'fixed') {
-      return {
-        position: 'fixed',
-        top: '120px',
-        right: `${fixedRight}px`,
-        width: `${fixedWidth}px`,
-        zIndex: 10,
-      };
-    }
-    if (imageMode === 'below') {
-      return {
-        position: 'absolute',
-        bottom: '0',
-        right: '0',
-        width: '100%',
-      };
-    }
-    // 'above' — static, flows at top of right column
-    return {
-      position: 'relative',
-      width: '100%',
-    };
-  };
 
   return (
     <section className="sc-section" ref={sectionRef}>
@@ -262,9 +205,9 @@ const ScrollFeatureShowcase = () => {
             </div>
           </div>
 
-          {/* RIGHT — JS-controlled fixed/absolute image panel */}
-          <div className="sc-right" ref={rightColRef}>
-            <div className="sc-image-container" style={getImageStyle()} ref={containerRef}>
+          {/* RIGHT — Native CSS sticky image panel */}
+          <div className="sc-right">
+            <div className="sc-image-container">
               
               {/* Vibrant Ambient Glow behind */}
               <div

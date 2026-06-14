@@ -71,7 +71,7 @@ const Navbar = () => {
               to="/waitlist" 
               className="btn-primary py-2.5 px-6 text-[15px]"
             >
-              Join Waitlist
+              Start Free Trial
             </Link>
           </div>
 
@@ -109,7 +109,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
             className="btn-primary text-lg px-10 py-4"
           >
-            Join Waitlist
+            Start Free Trial
           </Link>
         </div>
       </div>

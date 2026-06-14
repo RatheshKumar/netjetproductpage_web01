@@ -11,9 +11,9 @@ const AboutPage = () => {
       {/* SECTION 1: HERO (INDIGO) */}
       <section className="section-indigo pt-32 lg:pt-40 pb-32 text-center overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-6 fade-in-up">
-          <h1 className="text-white mb-6">Built for the Backbone of India</h1>
+          <h1 className="text-white mb-6">Built for Businesses Everywhere</h1>
           <p className="text-white/75 text-xl max-w-3xl mx-auto leading-relaxed">
-            NetJetGo was born out of frustration. Running sales shouldn't mean fighting with disconnected software. We're here to unify your lead tracking and visual pipelines.
+            NetJetGo was born out of frustration. Managing people shouldn't mean fighting with disconnected software. We're here to unify your HR operations, workforce management, and team collaboration in one place.
           </p>
         </div>
       </section>
@@ -25,7 +25,7 @@ const AboutPage = () => {
             <span className="text-brand-indigo text-6xl font-extrabold absolute top-8 left-8 opacity-10 font-display leading-none">“</span>
             <div className="relative z-10 text-center">
               <h2 className="text-2xl md:text-3xl font-extrabold text-text-primary font-display mb-10 leading-tight">
-                "We're building the tool we wish we had. One platform that knows your entire sales process — your leads, your visual pipeline, and your customer communications. Built specifically for how Indian SMEs scale."
+                "We're building the tool we wish we had. One platform that knows your entire workforce — your people, your processes, and your team operations. Built specifically for how modern SMEs scale."
               </h2>
               <div className="flex flex-col items-center">
                 <div className="w-12 h-1 bg-gradient-to-r from-brand-indigo to-accent-pink mb-4" />
@@ -43,7 +43,7 @@ const AboutPage = () => {
             {[
               { stat: "6 hrs/wk", label: "Wasted on manual data entry" },
               { stat: "₹8,000/mo", label: "Average cost of fragmented tools" },
-              { stat: "1,247+", label: "Businesses on the waitlist" }
+              { stat: "1,247+", label: "Active businesses" }
             ].map((item, i) => (
               <div key={i} className="text-center fade-in-up">
                 <h3 className="text-4xl md:text-5xl font-extrabold text-text-primary font-display mb-3 tracking-tight">{item.stat}</h3>
@@ -107,7 +107,7 @@ const AboutPage = () => {
                 date: "April 2026" 
               },
               { 
-                text: "Just crossed 1,000 waitlist signups. Thank you for the trust. We're working double time for the launch.", 
+                text: "Just crossed 1,000 active businesses. Thank you for the trust. We're building the future of workspace operations.", 
                 date: "March 2026" 
               },
               { 
@@ -137,10 +137,10 @@ const AboutPage = () => {
       {/* SECTION 6: FINAL CTA (INDIGO) */}
       <section className="section-indigo py-32 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10 fade-in-up">
-          <h2 className="text-white mb-8">Be part of the founding story</h2>
-          <p className="text-white/75 text-lg mb-12">The first 200 businesses get exclusive perks and direct influence.</p>
+          <h2 className="text-white mb-8">Ready to Transform Your HR Operations?</h2>
+          <p className="text-white/75 text-lg mb-12">Join businesses worldwide managing their workforce smarter with NetJetGo.</p>
           <Link to="/waitlist" className="btn-primary py-5 px-14 text-lg inline-flex items-center space-x-3 shadow-xl">
-            <span>Join the Waitlist</span>
+            <span>Schedule a Demo</span>
             <ArrowRight size={22} />
           </Link>
         </div>

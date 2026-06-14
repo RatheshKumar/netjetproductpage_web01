@@ -39,8 +39,8 @@ const WaitlistForm = ({ size = "hero", variant = "light", decrementSpots }) => {
           <Check size={22} strokeWidth={3} />
         </div>
         <div>
-          <h4 className={`font-bold text-sm ${variant === 'indigo' ? 'text-white' : 'text-text-primary'}`}>🎉 You're on the list!</h4>
-          <p className={variant === 'indigo' ? 'text-white/60 text-xs' : 'text-text-muted text-xs'}>Watch your inbox for early access updates.</p>
+          <h4 className={`font-bold text-sm ${variant === 'indigo' ? 'text-white' : 'text-text-primary'}`}>🎉 Welcome to NetJetGo!</h4>
+          <p className={variant === 'indigo' ? 'text-white/60 text-xs' : 'text-text-muted text-xs'}>Watch your inbox for your free trial setup link.</p>
         </div>
       </div>
     );
@@ -60,8 +60,8 @@ const WaitlistForm = ({ size = "hero", variant = "light", decrementSpots }) => {
             type="email"
             value={email}
             onChange={(e) => {
-              setEmail(e.target.value);
-              if (error) setError('');
+               setEmail(e.target.value);
+               if (error) setError('');
             }}
             placeholder="Enter your work email"
             className={`w-full ${variant === 'indigo' ? 'input-indigo' : 'input-standard'} ${
@@ -86,7 +86,7 @@ const WaitlistForm = ({ size = "hero", variant = "light", decrementSpots }) => {
             <Loader2 size={24} className="animate-spin" />
           ) : (
             <>
-              <span>{isHero ? 'Claim My Spot' : 'Join Waitlist'}</span>
+              <span>Start Free Trial</span>
               <ArrowRight size={20} />
             </>
           )}

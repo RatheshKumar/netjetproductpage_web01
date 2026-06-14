@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Send, Globe, Share2, Rocket } from 'lucide-react';
+import footerLogo from '../assets/footerlogo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,14 +12,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Info */}
           <div className="col-span-1 lg:col-span-1">
-            <Link to="/" className="flex items-center space-x-2 mb-6 group">
-              <Rocket className="text-white group-hover:rotate-12 transition-transform" size={24} />
-              <span className="text-2xl font-extrabold font-display text-white tracking-tight">
-                NetJetGo
-              </span>
+            <Link to="/" className="flex items-center mb-6 group">
+              <img src={footerLogo} alt="NetJetGo Logo" className="h-10 w-auto object-contain" />
             </Link>
             <p className="text-white/55 text-[15px] leading-relaxed mb-8">
-              The unified business OS for Indian SMEs. Replacing fragmented tools with one powerful ecosystem.
+              The unified HR OS for businesses everywhere. Replacing fragmented tools with one powerful ecosystem.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="p-2.5 bg-white/5 border border-white/10 rounded-lg text-white/60 hover:text-white hover:border-white/30 transition-all">
@@ -37,7 +35,7 @@ const Footer = () => {
               <li><Link to="/features" className="text-white/60 text-[15px] hover:text-white transition-colors">Features</Link></li>
               <li><Link to="/pricing" className="text-white/60 text-[15px] hover:text-white transition-colors">Pricing</Link></li>
               <li><Link to="/roadmap" className="text-white/60 text-[15px] hover:text-white transition-colors">Roadmap</Link></li>
-              <li><Link to="/waitlist" className="text-white/60 text-[15px] hover:text-white transition-colors">Early Access</Link></li>
+              <li><Link to="/waitlist" className="text-white/60 text-[15px] hover:text-white transition-colors">Start Free Trial</Link></li>
             </ul>
           </div>
 

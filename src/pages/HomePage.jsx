@@ -14,10 +14,10 @@ import {
   LayoutDashboard,
   Target,
   FileText,
-  Rocket
+  Rocket,
+  Globe
 } from 'lucide-react';
 import WaitlistForm from '../components/WaitlistForm.jsx';
-import SpotCounter from '../components/SpotCounter.jsx';
 import navbarLogo from '../assets/navbarlogo.png';
 import mainLogo from '../assets/MainLogo.jpg';
 import ScrollFeatureShowcase from '../components/ScrollFeatureShowcase.jsx';
@@ -28,7 +28,7 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
   const scrollRef = useScrollAnimation();
 
   return (
-    <div className="overflow-hidden" ref={scrollRef}>
+    <div className="w-full overflow-x-clip" ref={scrollRef}>
       {/* SECTION 1: HERO (INDIGO) */}
       <section className="section-indigo relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">
         {/* Background Accents */}
@@ -39,14 +39,8 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Column */}
             <div className="space-y-10 fade-in-up">
-              <div className="inline-flex items-center space-x-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
-                <span className="text-white text-[11px] font-bold uppercase tracking-widest">
-                  ⚡ Launching Q3 2026 · Limited Early Access
-                </span>
-              </div>
-              
               <h1 className="text-white font-display">
-                The <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-pink to-accent-orange">Last</span> Business Tool Your Team Will Ever Need
+                Explore Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-pink to-accent-orange">Workspace</span>
               </h1>
               
               <p className="text-[17px] text-white/75 leading-relaxed max-w-xl font-medium">
@@ -58,9 +52,9 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
                 
                 <div className="flex flex-wrap gap-x-8 gap-y-4">
                   {[
-                    "1,247 businesses on waitlist",
+                    "Trusted by 1,247+ active teams",
                     "No credit card required",
-                    "40% lifetime discount"
+                    "14-day free trial"
                   ].map((text, i) => (
                     <div key={i} className="flex items-center space-x-2 text-white/60 text-[14px] font-medium">
                       <CheckCircle2 size={18} className="text-accent-pink" />
@@ -68,10 +62,6 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
                     </div>
                   ))}
                 </div>
-              </div>
-              
-              <div className="pt-6 max-w-md">
-                <SpotCounter spotsRemaining={spotsRemaining} variant="indigo" />
               </div>
             </div>
 
@@ -182,6 +172,50 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
         </div>
       </section>
 
+      {/* SECTION: ABOUT (LIGHT / WHITE with soft accents) */}
+      <section className="section-white py-24 relative overflow-hidden border-b border-border-light">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-indigo/5 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2" />
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Column: Heading and Sub-point badge */}
+            <div className="lg:col-span-5 space-y-6 fade-in-up">
+              <span className="text-[12px] font-bold text-brand-indigo uppercase tracking-widest bg-brand-indigo/5 px-4 py-1.5 rounded-full inline-block">
+                About NetJetGo
+              </span>
+              <h2 className="text-text-primary mb-6">
+                Built for Businesses <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo to-accent-pink">Everywhere</span>
+              </h2>
+              <div className="bg-page-bg border border-border-light rounded-2xl p-6 shadow-sm hover:border-brand-indigo/35 transition-all">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-brand-indigo/10 p-3 rounded-xl text-brand-indigo shrink-0">
+                    <Globe size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-[15px] font-bold text-text-primary mb-1">Built for Worldwide</h4>
+                    <p className="text-[13px] text-text-muted leading-relaxed font-medium">
+                      Built for Worldwide — Flexible pricing, secure cloud infrastructure, and enterprise-grade data protection designed to support organizations across the globe.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Paragraph Body text in a premium card */}
+            <div className="lg:col-span-7 fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <div className="bg-gradient-to-br from-white to-page-bg border border-border-light p-8 md:p-10 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 relative group">
+                <div className="absolute -top-3 -right-3 w-10 h-10 bg-accent-pink rounded-full blur-[20px] opacity-20 group-hover:opacity-40 transition-opacity" />
+                <p className="text-text-primary text-[17px] leading-relaxed font-medium">
+                  Growing a business is challenging enough without juggling multiple systems. NetJetGo unifies HR and workforce management into a single platform, giving teams around the world the visibility, efficiency, and control they need to manage their people better.
+                </p>
+                <p className="text-text-muted text-[15px] leading-relaxed font-medium mt-6 border-t border-border-light pt-6">
+                  We're building the platform we always wished existed—one place that understands your entire workforce. Manage employees, payroll, attendance, leave, and team operations seamlessly from a single platform designed to help businesses scale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 5: FEATURES TEASER (ALT LIGHT) */}
       <section className="section-alt py-24">
         <div className="max-w-[1200px] mx-auto px-6">
@@ -233,14 +267,14 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
       <section className="section-indigo py-32 relative overflow-hidden text-center">
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent-pink/20 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
         <div className="max-w-4xl mx-auto px-6 relative z-10 fade-in-up">
-          <h2 className="text-white mb-8">Claim your founding member spot</h2>
+          <h2 className="text-white mb-8">Start your free trial today</h2>
           <p className="text-white/75 text-lg mb-16 max-w-xl mx-auto font-medium">
-            Join 1,247 businesses already building on the unified OS. Lock in your lifetime 40% discount today.
+            Join 1,247+ businesses already running their workflow on the unified OS. Try it risk-free today.
           </p>
           <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-14 rounded-3xl shadow-2xl">
             <WaitlistForm size="inline" variant="indigo" decrementSpots={decrementSpots} />
             <p className="mt-8 text-white/50 text-[12px] font-bold uppercase tracking-widest">
-              Limited to the first 200 businesses only.
+              Instant setup · Cancel anytime · No credit card required
             </p>
           </div>
         </div>

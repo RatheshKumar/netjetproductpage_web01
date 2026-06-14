@@ -10,7 +10,6 @@ import {
   Rocket
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import SpotCounter from '../components/SpotCounter.jsx';
 import useCountdown from '../hooks/useCountdown.js';
 import useScrollAnimation from '../hooks/useScrollAnimation.js';
 
@@ -83,11 +82,11 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
           <div className="w-20 h-20 bg-brand-indigo rounded-full flex items-center justify-center mx-auto mb-10 shadow-xl animate-in zoom-in duration-500">
             <Check size={40} strokeWidth={3} className="text-white" />
           </div>
-          <h2 className="text-4xl font-extrabold text-text-primary font-display mb-4">Welcome to the Founding Cohort!</h2>
-          <p className="text-text-muted text-lg mb-12">Member #0049 — watch your inbox for the official launch link.</p>
+          <h2 className="text-4xl font-extrabold text-text-primary font-display mb-4">Welcome to NetJetGo HRM!</h2>
+          <p className="text-text-muted text-lg mb-12">Account ID #0049 — check your email inbox to access your trial environment.</p>
           
           <div className="bg-white border border-border-light p-6 md:p-10 rounded-[24px] shadow-sm mb-12">
-            <p className="text-text-subtle font-bold uppercase tracking-widest text-[11px] mb-4">Assigned Member Number</p>
+            <p className="text-text-subtle font-bold uppercase tracking-widest text-[11px] mb-4">Assigned Account ID</p>
             <p className="text-6xl font-extrabold font-mono text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo to-accent-pink tracking-tighter">#0049</p>
           </div>
 
@@ -114,11 +113,8 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
       {/* SECTION 1: HERO (INDIGO) */}
       <section className="section-indigo pt-32 lg:pt-40 pb-32 text-center">
         <div className="max-w-[1200px] mx-auto px-6 fade-in-up">
-          <h1 className="text-white mb-6">Claim your Founding Spot</h1>
-          <p className="text-white/75 text-xl max-w-2xl mx-auto mb-12">Join 1,247+ businesses locking in the unified OS and a lifetime 40% discount.</p>
-          <div className="max-w-md mx-auto">
-            <SpotCounter spotsRemaining={spotsRemaining} variant="indigo" />
-          </div>
+          <h1 className="text-white mb-6">Start Your Free Trial</h1>
+          <p className="text-white/75 text-xl max-w-2xl mx-auto mb-12">Join 1,247+ businesses running their HR operations on the unified OS.</p>
         </div>
       </section>
 
@@ -131,12 +127,12 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
             <div className="space-y-16 fade-in-up">
               <div className="space-y-6">
                 {[
-                  "Access 4 weeks before public launch",
-                  "40% lifetime discount — locked forever",
-                  "Direct Slack access to the product team",
+                  "Instant setup — start working in minutes",
+                  "14-day free trial on any premium plan",
+                  "24/7 priority support & Slack access",
                   "White-glove onboarding & data migration",
-                  "Your name on the Founding Members wall",
-                  "Vote on our Q4 feature roadmap"
+                  "Flexible pricing built for teams of all sizes",
+                  "Vote on future features in our roadmap"
                 ].map((benefit, i) => (
                   <div key={i} className="flex items-center space-x-4">
                     <div className="w-6 h-6 bg-brand-indigo/10 rounded-full flex items-center justify-center text-brand-indigo">
@@ -155,7 +151,7 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
                     <Rocket size={20} />
                   </div>
                   <div className="relative z-10 text-center">
-                    <span className="text-[11px] font-mono font-bold tracking-[0.2em] text-white/70">FOUNDING MEMBER</span>
+                    <span className="text-[11px] font-mono font-bold tracking-[0.2em] text-white/70">PREMIUM MEMBER</span>
                   </div>
                   <div className="flex justify-between items-end relative z-10 font-mono">
                     <span className="text-white text-[15px] italic truncate max-w-[200px]">
@@ -215,7 +211,7 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
                   </div>
 
                   <button type="submit" disabled={status === 'loading'} className="btn-primary w-full py-5 text-lg flex items-center justify-center space-x-3 shadow-xl">
-                    {status === 'loading' ? <Loader2 size={24} className="animate-spin" /> : <><span>Claim My Founder Spot</span><ArrowRight size={22} /></>}
+                    {status === 'loading' ? <Loader2 size={24} className="animate-spin" /> : <><span>Start My Free Trial</span><ArrowRight size={22} /></>}
                   </button>
 
                   <div className="flex items-center justify-center space-x-2 text-[11px] font-bold text-text-subtle uppercase tracking-widest">

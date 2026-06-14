@@ -90,7 +90,7 @@ const PricingPage = () => {
         <div className="max-w-[1200px] mx-auto px-6 fade-in-up">
           <h1 className="text-white mb-6">Simple, Transparent Pricing</h1>
           <p className="text-white/75 text-xl max-w-2xl mx-auto mb-12">
-            No hidden fees. One subscription for your whole business. Join the first 200 and lock in early bird rates forever.
+            No hidden fees. One subscription for your whole business. Start your 14-day free trial today.
           </p>
 
           <div className="max-w-2xl mx-auto bg-white/10 border border-white/20 rounded-[18px] p-4 text-white font-bold flex items-center justify-center space-x-3 shadow-xl">
@@ -222,7 +222,7 @@ const PricingPage = () => {
               </div>
             </div>
             <Link to="/waitlist" className="btn-brand px-10 py-4 flex items-center space-x-3">
-              <span>Secure My Spot</span>
+              <span>Start Free Trial</span>
               <ArrowRight size={20} />
             </Link>
           </div>

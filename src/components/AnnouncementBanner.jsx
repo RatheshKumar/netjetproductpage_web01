@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 
 const AnnouncementBanner = () => {
@@ -23,9 +24,9 @@ const AnnouncementBanner = () => {
       <div className="max-w-[1200px] mx-auto flex items-center justify-center">
         <div className="flex items-center space-x-3 text-white text-[13px] md:text-[14px] font-medium">
           <span className="flex h-1.5 w-1.5 rounded-full bg-white pulse-dot"></span>
-          <p className="tracking-wide">
-            🚀 Launching Q3 2026 — Only 47 spots left. Join 1,247 businesses on the waitlist →
-          </p>
+          <Link to="/waitlist" className="hover:underline tracking-wide">
+            🎉 NetJetGo HRM is now live! Start your 14-day free trial today →
+          </Link>
         </div>
         <button 
           onClick={handleDismiss}

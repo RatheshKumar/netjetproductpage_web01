@@ -181,10 +181,10 @@ const FeaturesPage = () => {
         <div className="max-w-4xl mx-auto px-6 relative z-10 fade-in-up">
           <h2 className="text-white mb-6">Ready to see it in action?</h2>
           <p className="text-white/75 text-lg mb-12 max-w-2xl mx-auto">
-            Join the first 200 businesses and lock in your founding member status.
+            Start scaling your business with NetJetGo HRM today.
           </p>
           <Link to="/waitlist" className="btn-primary py-5 px-14 text-lg inline-flex items-center space-x-3 shadow-xl">
-            <span>Join the Waitlist</span>
+            <span>Start Free Trial</span>
             <ArrowRight size={22} />
           </Link>
         </div>
