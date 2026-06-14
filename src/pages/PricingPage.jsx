@@ -33,11 +33,7 @@ const PricingPage = () => {
       name: "Essential",
       desc: "For small businesses starting to digitize operations.",
       features: [
-        "Best for: 5–25 employees",
-        "Core HR operations & directory",
-        "Attendance & time tracking",
-        "Employee onboarding checklists",
-        "Basic document portal"
+        "Best for: 5–25 employees"
       ],
       cta: "Schedule a Demo",
       highlight: false
@@ -46,12 +42,8 @@ const PricingPage = () => {
       name: "Professional",
       desc: "For growing teams that need automation.",
       features: [
-        "Best for: 25–100 employees",
-        "Everything in Essential, plus more",
-        "Automated payroll processing",
-        "Offboarding management workflows",
-        "Custom approval roles & logs",
-        "Priority support & assistance"
+        "Everything in Essential, plus",
+        "Best for: 25–100 employees"
       ],
       cta: "Talk to Sales",
       highlight: true,
@@ -61,13 +53,8 @@ const PricingPage = () => {
       name: "Enterprise",
       desc: "For organizations requiring customization.",
       features: [
-        "Best for: 100+ employees",
-        "Everything in Professional, plus more",
-        "Enterprise-grade compliance",
-        "Custom RBAC & workflow builders",
-        "Dedicated database residency",
-        "Dedicated success representative",
-        "Custom integrations & API access"
+        "Everything in Professional, plus",
+        "Best for: 100+ employees"
       ],
       cta: "Request a Proposal",
       highlight: false
