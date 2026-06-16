@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import { Check, Loader2, ArrowRight } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_SERVICE_ID } from '../pages/WaitlistPage';
 
-const WaitlistForm = ({ size = "hero", variant = "light", decrementSpots }) => {
+const EMAILJS_ADMIN_TEMPLATE_ID = 'template_81yo394';
+const EMAILJS_USER_TEMPLATE_ID = 'template_cxtxlsw';
+const EMAILJS_PUBLIC_KEY = 'JrYYs9LFF592l0nSH';
+
+function WaitlistForm({ size = "hero", variant = "light", decrementSpots }) {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState('idle'); // idle, loading, success
+  const [status, setStatus] = useState('idle'); // idle, loading, success, error
   const [error, setError] = useState('');
 
   const validateEmail = (e) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
@@ -26,10 +32,37 @@ const WaitlistForm = ({ size = "hero", variant = "light", decrementSpots }) => {
 
     setStatus('loading');
 
-    setTimeout(() => {
+    try {
+      // 1. Send email to admin with user details
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_ADMIN_TEMPLATE_ID,
+        {
+          user_email: email,
+          submitted_at: new Date().toLocaleString(),
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      // 2. Send confirmation email to the user
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_USER_TEMPLATE_ID,
+        {
+          to_email: email,
+          to_name: email.split('@')[0],
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
       setStatus('success');
       if (decrementSpots) decrementSpots();
-    }, 1500);
+
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setStatus('idle');
+      setError('Something went wrong. Please try again.');
+    }
   };
 
   if (status === 'success') {
@@ -51,7 +84,7 @@ const WaitlistForm = ({ size = "hero", variant = "light", decrementSpots }) => {
 
   return (
     <div className="w-full">
-      <form 
+      <form
         onSubmit={handleSubmit}
         className={`flex flex-col ${isInline ? 'md:flex-row' : ''} gap-3`}
       >
@@ -60,15 +93,12 @@ const WaitlistForm = ({ size = "hero", variant = "light", decrementSpots }) => {
             type="email"
             value={email}
             onChange={(e) => {
-               setEmail(e.target.value);
-               if (error) setError('');
+              setEmail(e.target.value);
+              if (error) setError('');
             }}
             placeholder="Enter your work email"
-            className={`w-full ${variant === 'indigo' ? 'input-indigo' : 'input-standard'} ${
-              error ? 'border-accent-pink/50' : ''
-            }`}
-            disabled={status === 'loading'}
-          />
+            className={`w-full ${variant === 'indigo' ? 'input-indigo' : 'input-standard'} ${error ? 'border-accent-pink/50' : ''}`}
+            disabled={status === 'loading'} />
           {error && (
             <p className="absolute -bottom-6 left-2 text-accent-pink text-[11px] font-bold uppercase tracking-wider">
               {error}
@@ -78,9 +108,7 @@ const WaitlistForm = ({ size = "hero", variant = "light", decrementSpots }) => {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className={`${variant === 'indigo' ? 'btn-primary' : 'btn-primary'} whitespace-nowrap flex items-center justify-center space-x-2 ${
-            isHero ? 'px-10 py-4 text-[16px]' : 'px-8 py-4'
-          }`}
+          className={`${variant === 'indigo' ? 'btn-primary' : 'btn-primary'} whitespace-nowrap flex items-center justify-center space-x-2 ${isHero ? 'px-10 py-4 text-[16px]' : 'px-8 py-4'}`}
         >
           {status === 'loading' ? (
             <Loader2 size={24} className="animate-spin" />
@@ -94,6 +122,6 @@ const WaitlistForm = ({ size = "hero", variant = "light", decrementSpots }) => {
       </form>
     </div>
   );
-};
+}
 
 export default WaitlistForm;

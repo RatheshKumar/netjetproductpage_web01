@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { 
-  CheckCircle2, 
-  ArrowRight, 
-  Loader2, 
-  Share2, 
-  Send, 
-  ShieldCheck, 
+import {
+  CheckCircle2,
+  ArrowRight,
+  Loader2,
+  Share2,
+  Send,
+  ShieldCheck,
   Check,
   Rocket
 } from 'lucide-react';
@@ -84,7 +84,7 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
           </div>
           <h2 className="text-4xl font-extrabold text-text-primary font-display mb-4">Welcome to NetJetGo HRM!</h2>
           <p className="text-text-muted text-lg mb-12">Account ID #0049 — check your email inbox to access your trial environment.</p>
-          
+
           <div className="bg-white border border-border-light p-6 md:p-10 rounded-[24px] shadow-sm mb-12">
             <p className="text-text-subtle font-bold uppercase tracking-widest text-[11px] mb-4">Assigned Account ID</p>
             <p className="text-6xl font-extrabold font-mono text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo to-accent-pink tracking-tighter">#0049</p>
@@ -122,7 +122,7 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
       <section className="section-alt py-24 border-b border-border-light">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            
+
             {/* Left: Benefits + Card */}
             <div className="space-y-16 fade-in-up">
               <div className="space-y-6">
@@ -262,4 +262,5 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
   );
 };
 
-export default WaitlistPage;
+export default WaitlistPage; export const EMAILJS_SERVICE_ID = 'JrYYs9LFF592l0nSH';
+
