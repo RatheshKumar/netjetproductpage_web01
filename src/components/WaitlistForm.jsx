@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Check, Loader2, ArrowRight } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import { EMAILJS_SERVICE_ID } from '../pages/WaitlistPage';
 
+const EMAILJS_SERVICE_ID = 'JrYYs9LFF592l0nSH';
 const EMAILJS_ADMIN_TEMPLATE_ID = 'template_81yo394';
 const EMAILJS_USER_TEMPLATE_ID = 'template_cxtxlsw';
 const EMAILJS_PUBLIC_KEY = 'JrYYs9LFF592l0nSH';
@@ -38,7 +38,7 @@ function WaitlistForm({ size = "hero", variant = "light", decrementSpots }) {
         EMAILJS_SERVICE_ID,
         EMAILJS_ADMIN_TEMPLATE_ID,
         {
-          user_email: email,
+          admin_email: "rathesh102@gmail.com",
           submitted_at: new Date().toLocaleString(),
         },
         EMAILJS_PUBLIC_KEY
@@ -48,10 +48,11 @@ function WaitlistForm({ size = "hero", variant = "light", decrementSpots }) {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_USER_TEMPLATE_ID,
-        {
-          to_email: email,
-          to_name: email.split('@')[0],
-        },
+          {
+            to_email: email,
+            to_name: email.split('@')[0],
+            product_id: "PRD-001",
+          },
         EMAILJS_PUBLIC_KEY
       );
 
