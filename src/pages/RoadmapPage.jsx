@@ -33,7 +33,7 @@ const RoadmapPage = () => {
       status: "complete",
       date: "Q1 2026",
       desc: "Building the engine that powers NetJetGo.",
-      items: ["CRM Core (Leads, Contacts)", "Deal Pipelines", "JWT Auth & RBAC", "CRM Dashboard v1"]
+      items: ["HRM Core (Employee Directory)", "Attendance & Time Tracking", "JWT Auth & RBAC", "HR Dashboard v1"]
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ const RoadmapPage = () => {
       status: "complete",
       date: "Q2 2026",
       desc: "Adding AI and discovery tools.",
-      items: ["AI Assistant Beta", "Global Cmd+K Search", "Real-time Lead Scoring", "Automation Engine"]
+      items: ["AI HR Assistant Beta", "Global Cmd+K Search", "Overtime Auto-approvals", "Automation Engine"]
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ const RoadmapPage = () => {
       status: "in-progress",
       date: "Q3 2026 (Live)",
       desc: "Enhancing connectivity and scale.",
-      items: ["WhatsApp API Sync", "Email Campaign Engine", "Mobile PWA Experience", "Custom Fields Module"]
+      items: ["WhatsApp Attendance Sync", "Automated Payroll Engine", "Mobile PWA Experience", "Custom Fields Module"]
     },
     {
       id: 4,
@@ -57,7 +57,7 @@ const RoadmapPage = () => {
       status: "upcoming",
       date: "Late 2026",
       desc: "Opening up the platform.",
-      items: ["Public API Access", "Zapier Integration", "Advanced Analytics", "Custom Workflow Builder"]
+      items: ["Public API Access", "Zapier Integration", "Advanced Workforce Analytics", "Custom Workflow Builder"]
     }
   ];
 

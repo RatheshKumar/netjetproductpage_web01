@@ -44,7 +44,7 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
               </h1>
               
               <p className="text-[17px] text-white/75 leading-relaxed max-w-xl font-medium">
-                Stop switching between Zoho, HubSpot, and Excel. NetJetGo unifies your lead tracking, pipelines, and sales automation into one intelligent platform. Everything your sales runs on — one login.
+                Stop switching between Zoho, Keka, and Excel. NetJetGo unifies your payroll, attendance, and employee tracking into one intelligent platform. Everything your business runs on — one login.
               </p>
               
               <div className="space-y-8 pt-4">
@@ -104,7 +104,7 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
               Teams currently switching from:
             </span>
             <div className="flex flex-wrap justify-center gap-6">
-              {["Zoho", "Keka", "HubSpot", "Salesforce", "Excel", "Sheets"].map((brand) => (
+              {["Keka", "greytHR", "Darwinbox", "Zoho People", "Excel", "Sheets"].map((brand) => (
                 <div key={brand} className="bg-white border border-border-light px-6 py-2.5 rounded-full shadow-sm hover:border-brand-indigo transition-all group">
                   <span className="text-text-muted text-[13px] font-bold group-hover:text-brand-indigo transition-colors">{brand}</span>
                 </div>
@@ -123,7 +123,7 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
           <div className="text-center mb-20 fade-in-up">
             <h2 className="text-text-primary mb-6">The old way is <span className="text-accent-pink">costly</span></h2>
             <p className="text-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
-              Managing sales and pipelines on disconnected tools leads to data silos, expensive subscriptions, and lost deals.
+              Managing payroll and employee operations on disconnected tools leads to data silos, expensive subscriptions, and human error.
             </p>
           </div>
 
@@ -131,9 +131,9 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
             {/* Problems */}
             <div className="space-y-6 fade-in-up">
               {[
-                "Paying ₹8,000+/mo for separate lead, pipeline, and email tools",
-                "Your sales reps have no idea which lead to follow up with first",
-                "Endless manual data entry between multiple sales spreadsheets"
+                "Paying ₹8,000+/mo for separate attendance, payroll, and HR tools",
+                "Your HR manager has no idea who is on leave today due to sheet mismatches",
+                "Endless manual data entry between biometric devices and payroll logs"
               ].map((text, i) => (
                 <div key={i} className="bg-page-bg border border-border-light rounded-[14px] p-8 flex items-start space-x-5 group hover:border-accent-pink/30 transition-all">
                   <div className="bg-accent-pink/10 p-2.5 rounded-lg text-accent-pink group-hover:scale-110 transition-transform">
@@ -156,9 +156,9 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
             {/* Solutions */}
             <div className="space-y-6 fade-in-up" style={{ animationDelay: '0.1s' }}>
               {[
-                "One simple subscription for all your sales operations",
-                "Unified CRM: Real-time visibility across your entire pipeline",
-                "AI-powered automation: Say goodbye to manual follow-ups"
+                "One simple subscription for all your HR operations",
+                "Unified HRM: Real-time visibility across attendance and payroll",
+                "AI-powered automation: Say goodbye to manual payroll calculations"
               ].map((text, i) => (
                 <div key={i} className="bg-brand-indigo/5 border-2 border-brand-indigo/20 rounded-[14px] p-8 flex items-start space-x-5 group hover:bg-brand-indigo/10 transition-all">
                   <div className="bg-brand-indigo/10 p-2.5 rounded-lg text-brand-indigo group-hover:scale-110 transition-transform">
@@ -222,7 +222,7 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="fade-in-up">
               <h2 className="mb-4">Unified from Day One</h2>
-              <p className="text-text-muted text-lg max-w-lg">Designed to give you full visibility over your sales and people.</p>
+              <p className="text-text-muted text-lg max-w-lg">Designed to give you full visibility over your operations and people.</p>
             </div>
             <Link to="/features" className="btn-brand inline-flex items-center space-x-3 fade-in-up">
               <span>Explore All Modules</span>
@@ -233,20 +233,20 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-1">
             {[
               { 
-                title: "Unified Pipeline", 
-                desc: "Every deal tracked with AI lead scoring. See exactly where your revenue is coming from.", 
-                icon: TrendingUp,
+                title: "Attendance Tracking", 
+                desc: "Track check-ins, check-outs, daily timesheets, and late marks in real-time. Automatically syncs with payroll.", 
+                icon: Users,
                 color: "accent-pink"
               },
               { 
-                title: "Deal Automation", 
-                desc: "Automate follow-ups, lead assignment, and notifications to accelerate sales velocity.", 
+                title: "Smart Payroll", 
+                desc: "One-click payroll processing. Fully compliant with Indian tax laws and automatically syncs with attendance records.", 
                 icon: Briefcase,
                 color: "accent-orange"
               },
               { 
-                title: "AI Assistant", 
-                desc: "Get instant answers about your business. 'Which rep has the highest close rate?'", 
+                title: "AI HR Assistant", 
+                desc: "Get instant answers about your team. 'Which department has the highest leave rate this month?'", 
                 icon: Zap,
                 color: "brand-indigo"
               }

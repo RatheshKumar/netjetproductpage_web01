@@ -103,7 +103,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-1">
             {[
               { 
-                text: "Phase 2 is officially complete! Our AI assistant can now fetch data across your visual pipeline and analytics modules seamlessly.", 
+                text: "Phase 2 is officially complete! Our AI assistant can now fetch data across your payroll and attendance modules seamlessly.", 
                 date: "April 2026" 
               },
               { 
@@ -111,7 +111,7 @@ const AboutPage = () => {
                 date: "March 2026" 
               },
               { 
-                text: "Started integration tests for WhatsApp Business API. This will be a game changer for lead response times.", 
+                text: "Started integration tests for WhatsApp Business API. This will be a game changer for real-time attendance alerts.", 
                 date: "Feb 2026" 
               }
             ].map((post, i) => (

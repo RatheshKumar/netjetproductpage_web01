@@ -235,9 +235,9 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-1">
             {[
-              { q: "Finally, one platform for tracking deals and client conversations. This changes everything for our sales reps.", a: "Priya", c: "Bangalore" },
-              { q: "Replaced two expensive CRM tools in the beta. The AI assistant alone is worth the subscription.", a: "Arjun", c: "Chennai" },
-              { q: "The visual sales pipeline is exactly what we needed. Simple, intuitive, and helps us close deals faster.", a: "Meera", c: "Hyderabad" }
+              { q: "Finally, one platform for tracking attendance and employee records. This changes everything for our HR team.", a: "Priya", c: "Bangalore" },
+              { q: "Replaced two expensive HR tools in the beta. The AI assistant alone is worth the subscription.", a: "Arjun", c: "Chennai" },
+              { q: "The automated payroll processing is exactly what we needed. Simple, intuitive, and helps us run payroll in minutes.", a: "Meera", c: "Hyderabad" }
             ].map((item, i) => (
               <div key={i} className="fade-in-up">
                 <TestimonialCard quote={item.q} author={item.a} city={item.c} />

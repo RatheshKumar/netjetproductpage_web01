@@ -36,59 +36,59 @@ const FeaturesPage = () => {
   // Benefit cards data (6 items)
   const benefits = [
     {
-      title: "Centralized Sales Operations",
-      desc: "Manage leads, contacts, deals, pipeline stages, client meetings, quotes, invoices, and automated follow-ups from one centralized system. This reduces dependency on multiple disconnected tools.",
-      icon: Layers
+      title: "Centralized HR Operations",
+      desc: "Manage employee records, onboarding task lists, offboarding clearances, leave tracking, daily attendance, and payroll from one unified dashboard. This eliminates fragmented databases.",
+      icon: Users
     },
     {
-      title: "Saves Sales Team Time",
-      desc: "Automate repetitive sales activities such as lead assignment, follow-up emails, task reminders, and deal status updates. Sales teams can focus more on closing deals instead of manual operations.",
+      title: "Saves HR Team Time",
+      desc: "Automate repetitive HR administration tasks like timesheet compilation, payroll calculations, slip generation, and document collection. Let your team focus on company growth.",
       icon: Clock
     },
     {
-      title: "Accurate Revenue Forecasting",
-      desc: "Integrated sales pipelines and deal probability analysis ensure highly accurate sales forecasts. This minimizes uncertainty and helps teams plan business resources effectively.",
+      title: "Accurate Payroll & Compliance",
+      desc: "Attendance tracking and leave approvals automatically sync with the payroll engine. Generate compliant salary details and minimize errors in payslips.",
       icon: Calculator
     },
     {
-      title: "Customer Self-Service Portal",
-      desc: "Clients can check project progress, submit support tickets, pay outstanding invoices, and access shared contracts and files without manual intervention. This improves transparency and satisfaction.",
+      title: "Employee Self-Service Portal",
+      desc: "Staff can easily check-in/out, submit leave requests, track their attendance analytics, and view/download historical payslips without manual HR intervention.",
       icon: UserCheck
     },
     {
-      title: "Better Lead Activity Tracking",
-      desc: "Track client interactions, website visits, email opens, link clicks, and past meetings. Sales reps get detailed, real-time context about every prospect's engagement.",
+      title: "Better Attendance Tracking",
+      desc: "Monitor live check-in and check-out logs. Get reports on on-time performance, late entries, overtime approval requests, and field check-ins with location tags.",
       icon: Fingerprint
     },
     {
-      title: "Improves Conversion Rates",
-      desc: "Score leads with AI, nurture prospects with automated drip campaigns, and manage interactions through a structured sales workflow. This helps companies close deals faster.",
+      title: "Smooth Onboarding Experience",
+      desc: "Set up candidate recruitment pipeline stages and automatically convert selected profiles into employees. Assign custom onboarding checklists.",
       icon: Briefcase
     }
   ];
 
   // Platform Features data (20 items)
   const platformFeatures = [
-    { name: "Lead Tracking & Management", icon: Target },
-    { name: "Contact & Account Directory", icon: Users },
-    { name: "Visual Sales Pipelines", icon: Layers },
-    { name: "Deal Stage Automation", icon: Zap },
-    { name: "Email Sync & Templates", icon: FileText },
-    { name: "Activity Timeline Logging", icon: Clock },
-    { name: "Task & Meeting Scheduler", icon: Calendar },
-    { name: "AI Lead Scoring", icon: Fingerprint },
-    { name: "WhatsApp & SMS Campaigns", icon: MessageSquare },
-    { name: "Quotation & Invoice Builder", icon: Coins },
-    { name: "Customer Portal Access", icon: Smartphone },
-    { name: "Shared Team Inbox", icon: Users },
-    { name: "Sales Reports & Analytics", icon: BarChart },
-    { name: "Custom CRM Fields", icon: Shuffle },
-    { name: "Approval Workflows for Deals", icon: CheckSquare },
-    { name: "Customer Help Desk / Tickets", icon: HelpCircle },
-    { name: "Asset Assignment Tracking", icon: Laptop },
+    { name: "Employee Directory & Profiles", icon: Users },
+    { name: "Attendance & Time Tracking", icon: Clock },
+    { name: "Leave & Time-Off Approvals", icon: Calendar },
+    { name: "Automated Payroll Engine", icon: Coins },
+    { name: "Candidate Pipeline Tracker", icon: Layers },
+    { name: "Onboarding Checklists", icon: ClipboardCheck },
+    { name: "Offboarding Clearances", icon: LogOut },
+    { name: "Asset Assignment Log", icon: Laptop },
+    { name: "Performance OKR Tracking", icon: Target },
+    { name: "Custom Approval Roles (RBAC)", icon: Fingerprint },
+    { name: "WhatsApp & SMS Notifications", icon: MessageSquare },
+    { name: "Document E-Signatures", icon: ClipboardCheck },
+    { name: "Employee Self-Service Portal", icon: Smartphone },
+    { name: "Payroll Budget Reports", icon: BarChart },
+    { name: "Custom Employee Fields", icon: Shuffle },
+    { name: "Resignation & Notice Tracking", icon: CheckSquare },
+    { name: "HR Support & Help Desk Tickets", icon: HelpCircle },
     { name: "Performance Leaderboards", icon: Activity },
-    { name: "OKR & Sales Goal Tracking", icon: Target },
-    { name: "Contract & Document E-Sign", icon: ClipboardCheck }
+    { name: "Company Holiday Calendar", icon: Calendar },
+    { name: "Secure Cloud Files & Forms", icon: FileText }
   ];
 
   return (
@@ -102,10 +102,10 @@ const FeaturesPage = () => {
             </span>
           </div>
           <h1 className="text-white mb-6 max-w-4xl mx-auto leading-tight">
-            Why Businesses Need netjetgo CRM
+            Why Businesses Need netjetgo HRM
           </h1>
           <p className="text-white/75 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Most growing companies eventually struggle with spreadsheets, manual lead tracking, missed follow-ups, disconnected client tools, and inefficient sales processes. netjetgo CRM helps businesses simplify and automate complete sales operations from a single platform.
+            Most growing companies eventually struggle with spreadsheets, manual check-in tracking, missed payroll runs, disconnected exit clearances, and compliance errors. netjetgo HRM helps businesses simplify and automate complete employee operations from a single platform.
           </p>
         </div>
       </section>
@@ -117,7 +117,7 @@ const FeaturesPage = () => {
             <span className="text-brand-indigo text-[12px] font-extrabold uppercase tracking-widest mb-3 block">
               Core Benefits
             </span>
-            <h2 className="mb-4 text-text-primary">Supercharge Your Sales Operations</h2>
+            <h2 className="mb-4 text-text-primary">Supercharge Your HR Operations</h2>
             <p className="text-text-muted max-w-xl mx-auto">
               Say goodbye to fragmented tools and manual spreadsheets. Here is how netjetgo drives real business value.
             </p>

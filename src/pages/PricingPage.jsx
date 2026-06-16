@@ -37,9 +37,9 @@ const PricingPage = () => {
       desc: "For solopreneurs and tiny teams starting their journey.",
       features: [
         "Up to 5 Users",
-        "CRM Core Module",
-        "Pipeline Management",
-        "Basic Lead Scoring",
+        "Employee Profile Directory",
+        "Attendance & Time Tracking",
+        "Basic Onboarding Checklists",
         "Email Support",
         "2GB Document Storage"
       ],
@@ -50,17 +50,17 @@ const PricingPage = () => {
       name: "Growth",
       price: billingCycle === 'annual' ? 1499 : 2499,
       origPrice: billingCycle === 'annual' ? 2499 : 3999,
-      desc: "Perfect for scaling SMEs needing advanced CRM power.",
+      desc: "Perfect for scaling SMEs needing advanced HR automation.",
       features: [
         "Up to 25 Users",
-        "Full CRM Suite",
-        "Full AI Assistant",
-        "Sales Automation",
-        "WhatsApp Integration",
+        "Automated Payroll Engine",
+        "Leave & Offboarding Workflows",
+        "Asset Allocation Logs",
+        "WhatsApp Alerts Integration",
         "10GB Document Storage",
         "Priority Support"
       ],
-      cta: "Lock Growth Price",
+      cta: "Join Growth",
       highlight: true,
       badge: "MOST POPULAR"
     },
@@ -72,9 +72,9 @@ const PricingPage = () => {
       features: [
         "Unlimited Users",
         "Everything in Growth",
-        "Custom RBAC Roles",
-        "Advanced Analytics",
-        "API & Zapier Access",
+        "Custom RBAC & Approvals",
+        "Advanced Workforce Analytics",
+        "API & Custom Integrations",
         "Dedicated Success Lead",
         "Custom Data Migration"
       ],
@@ -94,8 +94,8 @@ const PricingPage = () => {
           </p>
 
           <div className="max-w-2xl mx-auto bg-white/10 border border-white/20 rounded-[18px] p-4 text-white font-bold flex items-center justify-center space-x-3 shadow-xl">
-            <span className="text-accent-orange">🔥 Early Bird Special:</span>
-            <span className="text-[15px]">Prices locked for the lifetime of your account.</span>
+            <span className="text-accent-orange">🔥 Launch Special:</span>
+            <span className="text-[15px]">Get a 14-day free trial on any premium plan.</span>
           </div>
         </div>
       </section>
@@ -180,14 +180,14 @@ const PricingPage = () => {
         <div className="max-w-[800px] mx-auto px-6">
           <div className="text-center mb-16 fade-in-up">
             <h2 className="mb-4">Common Questions</h2>
-            <p className="text-text-muted">Everything you need to know about the founding cohort.</p>
+            <p className="text-text-muted">Everything you need to know about our plans and features.</p>
           </div>
 
           <div className="bg-white border border-border-light rounded-[18px] overflow-hidden fade-in-up">
             {[
               {
-                q: "What does 'Price Locked Forever' mean?",
-                a: "If you join as a founding member at ₹1,499, that is your price for life. Even if we increase our public pricing to ₹5,000 in two years, your bill will never change."
+                q: "Can I change my plan later?",
+                a: "Yes, you can upgrade, downgrade, or cancel your subscription at any time directly from your organization settings dashboard."
               },
               {
                 q: "Is there a per-user fee?",
@@ -195,7 +195,7 @@ const PricingPage = () => {
               },
               {
                 q: "Do you offer migration support?",
-                a: "Yes. Founding members get 'White Glove Migration'. We'll handle the data export and import from Zoho CRM, HubSpot, or Excel for you."
+                a: "Yes. Founding members get 'White Glove Migration'. We'll handle the data export and import from Keka, Zoho People, or Excel for you."
               },
               {
                 q: "Is NetJetGo compliant with Indian laws?",
