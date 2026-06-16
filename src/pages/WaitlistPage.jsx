@@ -262,5 +262,5 @@ const WaitlistPage = ({ spotsRemaining, decrementSpots }) => {
   );
 };
 
-export default WaitlistPage; export const EMAILJS_SERVICE_ID = 'JrYYs9LFF592l0nSH';
+export default WaitlistPage; export const EMAILJS_SERVICE_ID = 'service_4ujdr5c';
 

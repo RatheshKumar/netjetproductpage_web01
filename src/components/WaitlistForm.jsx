@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Check, Loader2, ArrowRight } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
-const EMAILJS_SERVICE_ID = 'JrYYs9LFF592l0nSH';
-const EMAILJS_ADMIN_TEMPLATE_ID = 'template_81yo394';
-const EMAILJS_USER_TEMPLATE_ID = 'template_cxtxlsw';
+const EMAILJS_SERVICE_ID = 'service_4ujdr5c';
+const EMAILJS_ADMIN_TEMPLATE_ID = 'template_k5116ra';
+const EMAILJS_USER_TEMPLATE_ID = 'template_81yo394';
 const EMAILJS_PUBLIC_KEY = 'JrYYs9LFF592l0nSH';
 
 function WaitlistForm({ size = "hero", variant = "light", decrementSpots }) {
@@ -39,6 +39,7 @@ function WaitlistForm({ size = "hero", variant = "light", decrementSpots }) {
         EMAILJS_ADMIN_TEMPLATE_ID,
         {
           admin_email: "rathesh102@gmail.com",
+          user_email: email,
           submitted_at: new Date().toLocaleString(),
         },
         EMAILJS_PUBLIC_KEY
