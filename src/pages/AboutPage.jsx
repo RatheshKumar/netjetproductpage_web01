@@ -65,8 +65,8 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               { 
-                title: "Built for India", 
-                desc: "INR pricing, Mumbai-based servers, and DPDPA 2023 compliance from day one.", 
+                title: "Built for the World", 
+                desc: "Flexible pricing, global cloud infrastructure, and enterprise-grade compliance from day one.", 
                 icon: Globe 
               },
               { 

@@ -193,7 +193,7 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
                   <div>
                     <h4 className="text-[15px] font-bold text-text-primary mb-1">Built for Worldwide</h4>
                     <p className="text-[13px] text-text-muted leading-relaxed font-medium">
-                      Built for Worldwide — Flexible pricing, secure cloud infrastructure, and enterprise-grade data protection designed to support organizations across the globe.
+                      Flexible pricing, secure cloud infrastructure, and enterprise-grade data protection designed to support organizations across the globe.
                     </p>
                   </div>
                 </div>
@@ -205,10 +205,10 @@ const HomePage = ({ spotsRemaining, decrementSpots }) => {
               <div className="bg-gradient-to-br from-white to-page-bg border border-border-light p-8 md:p-10 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 relative group">
                 <div className="absolute -top-3 -right-3 w-10 h-10 bg-accent-pink rounded-full blur-[20px] opacity-20 group-hover:opacity-40 transition-opacity" />
                 <p className="text-text-primary text-[17px] leading-relaxed font-medium">
-                  Growing a business is challenging enough without juggling multiple systems. NetJetGo unifies HR and workforce management into a single platform, giving teams around the world the visibility, efficiency, and control they need to manage their people better.
+                  Growing a business is challenging enough without juggling multiple systems. NetJetGo unifies CRM and workflow management into a single platform, giving teams around the world the visibility, efficiency, and control they need to drive growth.
                 </p>
                 <p className="text-text-muted text-[15px] leading-relaxed font-medium mt-6 border-t border-border-light pt-6">
-                  We're building the platform we always wished existed—one place that understands your entire workforce. Manage employees, payroll, attendance, leave, and team operations seamlessly from a single platform designed to help businesses scale.
+                  We're building the platform we always wished existed—one place that understands your entire business workflow. Manage leads, visual sales pipelines, customer relationships, and team operations seamlessly from a single platform designed to help businesses scale.
                 </p>
               </div>
             </div>
